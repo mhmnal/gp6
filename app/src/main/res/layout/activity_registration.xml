@@ -4,29 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DAD5D5"
+    android:focusableInTouchMode="false"
     tools:context=".RegistrationActivity">
 
     <EditText
         android:id="@+id/et_username"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="#2E2E2E"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
+        android:shadowColor="#FFFFFF"
+        android:singleLine="false"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.485" />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="#2E2E2E"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -37,10 +47,13 @@
     <EditText
         android:id="@+id/et_password"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:background="#2E2E2E"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -52,7 +65,9 @@
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#2E2E2E"
         android:text="REGISTER"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -65,11 +80,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login Page"
-        android:textSize="22sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register"
         app:layout_constraintVertical_bias="0.108" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="402dp"
+        android:layout_height="248dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/w_elcome" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

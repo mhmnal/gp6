@@ -4,6 +4,8 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
@@ -28,6 +31,9 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_registration);
         setupUIViews();
 
@@ -42,17 +48,14 @@ public class RegistrationActivity extends AppCompatActivity {
                     String user_password = userPassword.getText().toString().trim();
 
                     firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-
                             if(task.isSuccessful()){
-                                Toast.makeText(RegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                                sendEmailVerification();
                             }else{
                                 Toast.makeText(RegistrationActivity.this, "Registration Fail", Toast.LENGTH_SHORT).show();
                             }
-
-
                         }
                     });
                 }
@@ -77,7 +80,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private Boolean validate(){
         Boolean result = false;
-
         String name = userName.getText().toString();
         String password = userPassword.getText().toString();
         String email = userEmail.getText().toString();
@@ -89,5 +91,23 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         return result;
+    }
+
+    private void sendEmailVerification(){
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if(firebaseUser != null){
+            firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(RegistrationActivity.this,"SUCCESSFULLY REGISTWERED, VERIFICATION MAIL SENT",Toast.LENGTH_SHORT).show();
+                        firebaseAuth.signOut();;
+                        finish();
+                        startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+                    }else
+                        Toast.makeText(RegistrationActivity.this,"Verification main has not been sent",Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 }
