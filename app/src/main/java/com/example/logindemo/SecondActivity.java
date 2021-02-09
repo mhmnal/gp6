@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SecondActivity extends AppCompatActivity {
 
-    public Button button;
+    public Button vprofile;
 
     private FirebaseAuth firebaseAuth;
     private Button logout;
@@ -31,8 +31,8 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        button = (Button) findViewById(R.id.btn_viewprofile);
-        button.setOnClickListener(new View.OnClickListener() {
+        vprofile = (Button) findViewById(R.id.btn_viewprofile);
+        vprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SecondActivity.this, ViewProfile.class);

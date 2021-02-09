@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class ViewProfile extends AppCompatActivity {
-    public Button button;
+    public Button cusername;
 
     private ImageView profilepicture;
     private TextView profilename, profileemail;
@@ -32,8 +32,8 @@ public class ViewProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
 
-        button = (Button) findViewById(R.id.btn_changuserename);
-        button.setOnClickListener(new View.OnClickListener() {
+        cusername = (Button) findViewById(R.id.btn_changuserename);
+        cusername.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ViewProfile.this,ChangeUsername.class);
