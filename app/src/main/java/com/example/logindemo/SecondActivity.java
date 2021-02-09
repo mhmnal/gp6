@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private Button logout;
 
-
+//je croissant
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
