@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.logindemo">
 
     <application
@@ -12,7 +13,6 @@
         <activity android:name=".ChangeUsername"></activity>
         <activity android:name=".ViewProfile" />
         <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".MainActivity2" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -16,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class ViewProfile extends AppCompatActivity {
+    public Button button;
 
     private ImageView profilepicture;
     private TextView profilename, profileemail;
@@ -28,6 +31,15 @@ public class ViewProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
+
+        button = (Button) findViewById(R.id.btn_changuserename);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewProfile.this,ChangeUsername.class);
+                startActivity(intent);
+            }
+        });
 
         profilepicture = findViewById(R.id.img_profilepicture);
         profilename = findViewById(R.id.txt_username);
