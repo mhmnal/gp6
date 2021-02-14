@@ -20,26 +20,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SecondActivity extends AppCompatActivity {
 
-    public Button vprofile;
 
     private FirebaseAuth firebaseAuth;
     private Button logout;
 
-//je croissant
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        vprofile = (Button) findViewById(R.id.btn_viewprofile);
-        vprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, ViewProfile.class);
-                startActivity(intent);
-
-            }
-        });
 
         setContentView(R.layout.activity_second);
 
@@ -74,6 +62,9 @@ public class SecondActivity extends AppCompatActivity {
             case R.id.logoutMenu:{
                 Logout();
             }
+            case R.id.profileMenu;
+            startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
+
         }
         return super.onOptionsItemSelected(item);
     }

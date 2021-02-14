@@ -8,5 +8,11 @@
         android:title="Logout"
         app:showAsAction="always"></item>
 
+    <item
+        android:id="@+id/profileMenu"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="Profile"></item>
+
 
 </menu>
