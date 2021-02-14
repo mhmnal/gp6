@@ -31,7 +31,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        vprofile = (Button) findViewById(R.id.btn_viewprofile);
+
         vprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
