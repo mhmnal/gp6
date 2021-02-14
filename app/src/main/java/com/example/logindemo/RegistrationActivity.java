@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -27,6 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
+    String email, name, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 sendEmailVerification();
+                                firebaseAuth.signOut();
                             }else{
                                 Toast.makeText(RegistrationActivity.this, "Registration Fail", Toast.LENGTH_SHORT).show();
                             }
@@ -80,9 +84,9 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private Boolean validate(){
         Boolean result = false;
-        String name = userName.getText().toString();
-        String password = userPassword.getText().toString();
-        String email = userEmail.getText().toString();
+         name = userName.getText().toString();
+         password = userPassword.getText().toString();
+         email = userEmail.getText().toString();
 
         if(name.isEmpty() || password.isEmpty() || email.isEmpty()){
             Toast.makeText(this, "Enter all details", Toast.LENGTH_SHORT).show();
@@ -100,6 +104,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
+                        sendUserData();
                         Toast.makeText(RegistrationActivity.this,"SUCCESSFULLY REGISTWERED, VERIFICATION MAIL SENT",Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();;
                         finish();
@@ -109,5 +114,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void sendUserData(){
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+
+        UserProfile userProfile = new UserProfile(email, name);
+        myRef.setValue(userProfile);
     }
 }

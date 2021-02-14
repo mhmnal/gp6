@@ -4,66 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewProfile">
-
-    <TextView
-        android:id="@+id/txt_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="296dp"
-        android:text="Name:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_profilepicture"
-        app:layout_constraintVertical_bias="0.365" />
+    tools:context=".ProfileActivity">
 
     <ImageView
-        android:id="@+id/img_profilepicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_profile"
-        app:layout_constraintVertical_bias="0.089"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/txt_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Profile"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:id="@+id/img_profilePic"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.165"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/txt_useremail"
+        android:id="@+id/txt_userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email:"
+        android:text="User Name: "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_username"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintTop_toBottomOf="@+id/img_profilePic"
+        app:layout_constraintVertical_bias="0.122" />
+
+    <TextView
+        android:id="@+id/txt_userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_userName"
+        app:layout_constraintVertical_bias="0.168" />
 
     <Button
-        android:id="@+id/btn_changuserename"
+        android:id="@+id/btn_profileUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Username"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_useremail"
-        app:layout_constraintVertical_bias="0.568" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
