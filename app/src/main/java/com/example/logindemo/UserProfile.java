@@ -1,6 +1,6 @@
 package com.example.logindemo;
 
-public class UserProfile {
+public class  UserProfile {
 
     public String userEmail;
     public String userName;
@@ -15,18 +15,22 @@ public class UserProfile {
     }
 
     public String getUserEmail() {
+
         return userEmail;
     }
 
     public void  setUserEmail(String userEmail) {
+
         this.userEmail = userEmail;
     }
 
     public String getUserName(){
+
         return userName;
     }
 
     public void getUserName(String userName) {
+
         this.userName = userName;
     }
 }

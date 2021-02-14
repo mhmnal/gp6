@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
+    private ImageView userProfilePic;
     String email, name, password;
 
     @Override
@@ -55,6 +57,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+                                sendUserData();
                                 sendEmailVerification();
                                 firebaseAuth.signOut();
                             }else{
