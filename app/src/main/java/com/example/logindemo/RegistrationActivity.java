@@ -33,7 +33,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 
@@ -75,7 +74,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-
         storageReference = firebaseStorage.getReference();
 
         userProfilePic.setOnClickListener(new View.OnClickListener() {
@@ -103,9 +101,9 @@ public class RegistrationActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                sendUserData();
+                               // sendUserData();
                                 sendEmailVerification();
-                                firebaseAuth.signOut();
+                               // firebaseAuth.signOut();
                             }else{
                                 Toast.makeText(RegistrationActivity.this, "Registration Fail", Toast.LENGTH_SHORT).show();
                             }
@@ -124,11 +122,12 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void setupUIViews(){
-        userName = (EditText)findViewById(R.id.et_username);
-        userPassword = (EditText)findViewById(R.id.et_password);
-        userEmail = (EditText)findViewById(R.id.et_email);
-        regButton = (Button)findViewById(R.id.btn_register);
-        userLogin = (TextView)findViewById(R.id.txt_alrlogin);
+        userName = findViewById(R.id.et_username);
+        userPassword = findViewById(R.id.et_password);
+        userEmail = findViewById(R.id.et_email);
+        regButton = findViewById(R.id.btn_register);
+        userLogin = findViewById(R.id.txt_alrlogin);
+        userProfilePic = findViewById(R.id.ivProfilePic);
     }
 
     private Boolean validate(){
@@ -167,7 +166,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference myRef = firebaseDatabase.getReference("UserInfo").child(firebaseAuth.getUid());
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
         UploadTask uploadTask = imageReference.putFile(imagePath);
         uploadTask.addOnFailureListener(new OnFailureListener() {
