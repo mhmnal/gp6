@@ -13,7 +13,6 @@
         <activity android:name=".UpdatePassword"></activity>
         <activity android:name=".UpdateProfile" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ChangeUsername" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SecondActivity" />
