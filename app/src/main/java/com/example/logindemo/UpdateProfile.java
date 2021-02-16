@@ -2,11 +2,14 @@ package com.example.logindemo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -67,15 +70,28 @@ public class UpdateProfile extends AppCompatActivity {
 
         newUserName = findViewById(R.id.etNameUpdate);
         newUserEmail = findViewById(R.id.etEmailUpdate);
-        newUserAge = findViewById(R.id.etAgeUpdate);
         save = findViewById(R.id.btnSave);
-        updateProfilePic = (ImageView)findViewById(R.id.ivProfileUpdate);
+        updateProfilePic = (ImageView)findViewById(R.id.ivPictureUpdate);
+
+        //Status bar and Action bar shenanigans////////////////////////////////////////////////////////////////////////////////////////
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Update Profile");
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#312c51"));
+
+        actionBar.setBackgroundDrawable(colorDrawable);
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
+
+
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("UserInfo").child(firebaseAuth.getUid());
         storageReference = firebaseStorage.getReference();

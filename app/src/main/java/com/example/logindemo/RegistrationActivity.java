@@ -38,6 +38,7 @@ import java.io.IOException;
 
 public class RegistrationActivity extends AppCompatActivity {
 
+    //Variables////////////////////////////////////////////////////////////////////
     private EditText userName, userPassword, userEmail;
     private Button regButton;
     private TextView userLogin;
@@ -49,6 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
     Uri imagePath;
     private StorageReference storageReference;
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() !=null){
@@ -63,6 +65,8 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+
+    //To remove action and status bar///////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,9 +76,14 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         setupUIViews();
 
+        //Integrate firebase shets////////////////////////////////////////////////
+
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference();
+
+        /////////////////////////////////////////////////////////////////
+
 
         userProfilePic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +95,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-
+        ///////////////////////////////////////////////////////////////////
 
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +122,8 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
+        ////////////////////////////////////////////////////////////////////////////////////////
+
         userLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +131,8 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void setupUIViews(){
         userName = findViewById(R.id.et_username);
@@ -129,6 +142,8 @@ public class RegistrationActivity extends AppCompatActivity {
         userLogin = findViewById(R.id.txt_alrlogin);
         userProfilePic = findViewById(R.id.ivProfilePic);
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private Boolean validate(){
         Boolean result = false;
@@ -144,6 +159,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         return result;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void sendEmailVerification(){
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
@@ -163,6 +180,8 @@ public class RegistrationActivity extends AppCompatActivity {
             });
         }
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();

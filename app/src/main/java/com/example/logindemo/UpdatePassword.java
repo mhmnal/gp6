@@ -47,7 +47,7 @@ public class UpdatePassword extends AppCompatActivity {
                             finish();
                         }else{
                             Toast.makeText(UpdatePassword.this, "Password change failed", Toast.LENGTH_SHORT).show();
-                            finish();
+
                         }
                     }
                 });

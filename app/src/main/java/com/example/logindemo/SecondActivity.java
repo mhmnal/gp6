@@ -1,8 +1,11 @@
 package com.example.logindemo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
@@ -22,8 +25,6 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private FirebaseAuth firebaseAuth;
-    private Button logout;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +34,20 @@ public class SecondActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        logout = (Button)findViewById(R.id.btn_logout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Logout();
-            }
-        });
+        //Change Status bar Color and Title///////////////////////////////////////////////////////////////////////
+
+        getSupportActionBar().setTitle("Item's Menu");
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#312c51"));
+
+        actionBar.setBackgroundDrawable(colorDrawable);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void Logout(){
         firebaseAuth.signOut();
@@ -49,11 +55,15 @@ public class SecondActivity extends AppCompatActivity {
         startActivity(new Intent(SecondActivity.this, MainActivity.class));
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

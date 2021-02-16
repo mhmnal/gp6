@@ -3,6 +3,8 @@ package com.example.logindemo;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,7 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -62,12 +66,20 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         profilePic = findViewById(R.id.img_profilePic);
-        profileName = findViewById(R.id.tvProfileName);
-        profileEmail = findViewById(R.id.tvProfileEmail);
+        profileName = findViewById(R.id.tvProfileName2);
+        profileEmail = findViewById(R.id.tvProfileEmail2);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Your Profile");
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#312c51"));
+
+        actionBar.setBackgroundDrawable(colorDrawable);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -102,8 +114,8 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile classUserProfile = dataSnapshot.getValue(UserProfile.class);
-                profileName.setText("Name: " + classUserProfile.getUserName());
-                profileEmail.setText("Email: " + classUserProfile.getUserEmail());
+                profileName.setText(classUserProfile.getUserName());
+                profileEmail.setText(classUserProfile.getUserEmail());
             }
 
             @Override
