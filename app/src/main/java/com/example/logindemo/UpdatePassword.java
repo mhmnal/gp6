@@ -1,4 +1,4 @@
-package com.example.logindemo;
+ package com.example.logindemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +20,7 @@ public class UpdatePassword extends AppCompatActivity {
     private Button update;
     private EditText newPassword;
     private FirebaseUser firebaseUser;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_password);
