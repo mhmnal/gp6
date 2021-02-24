@@ -75,15 +75,7 @@ public class UpdateProfile extends AppCompatActivity {
 
         //Status bar and Action bar shenanigans////////////////////////////////////////////////////////////////////////////////////////
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Update Profile");
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
 
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#312c51"));
-
-        actionBar.setBackgroundDrawable(colorDrawable);
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

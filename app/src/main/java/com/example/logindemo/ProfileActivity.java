@@ -65,21 +65,12 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
         profilePic = findViewById(R.id.img_profilePic);
         profileName = findViewById(R.id.tvProfileName2);
         profileEmail = findViewById(R.id.tvProfileEmail2);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Your Profile");
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
-
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#312c51"));
-
-        actionBar.setBackgroundDrawable(colorDrawable);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -90,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
         storageReference = firebaseStorage.getReference();
 
         StorageReference mImageRef = FirebaseStorage.getInstance().getReference().child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
-        final long ONE_MEGABYTE = 1024 * 1024;
+        final long ONE_MEGABYTE = 4194304;
 
         mImageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
@@ -138,6 +129,8 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

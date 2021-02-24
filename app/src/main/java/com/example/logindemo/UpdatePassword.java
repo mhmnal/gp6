@@ -32,8 +32,6 @@ import com.google.firebase.database.FirebaseDatabase;
         update = findViewById(R.id.btnUpdatePassword);
         newPassword = findViewById(R.id.etNewPassword);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         firebaseAuth = FirebaseAuth.getInstance();

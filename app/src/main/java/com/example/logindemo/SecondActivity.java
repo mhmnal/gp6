@@ -1,53 +1,60 @@
 package com.example.logindemo;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SecondActivity extends AppCompatActivity {
 
-
+    private Button clickProfile, Logout, bookingForm;
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_second);
+
+        clickProfile = findViewById(R.id.btnMyProfile);
+        Logout = findViewById(R.id.btnLogout);
+        bookingForm = findViewById(R.id.btnBookingForm);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        ///////////////////LOGOUT///////////////////////////////////////
 
-        //Change Status bar Color and Title///////////////////////////////////////////////////////////////////////
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(SecondActivity.this, MainActivity.class));
+            }
+        });
 
-        getSupportActionBar().setTitle("Item's Menu");
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
+        ////Direct buttons from SecondActivity to their own activities//////////////////////
 
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#312c51"));
+        clickProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
+            }
+        });
 
-        actionBar.setBackgroundDrawable(colorDrawable);
+        bookingForm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, BookingForm.class));
+            }
+        });
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////LOGOUT FUNCTION/////////////////////////////////////////////////
 
     private void Logout(){
         firebaseAuth.signOut();
@@ -55,28 +62,7 @@ public class SecondActivity extends AppCompatActivity {
         startActivity(new Intent(SecondActivity.this, MainActivity.class));
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
-            case R.id.logoutMenu:{
-                Logout();
-                break;
-            }
-            case R.id.profileMenu:
-            startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
-
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
