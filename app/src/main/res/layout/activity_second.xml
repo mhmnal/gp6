@@ -15,6 +15,7 @@
         android:fontFamily="@font/fjord_one"
         android:text="ABOUT US"
         android:textSize="20sp"
+        android:textColor="#725b53"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -30,6 +31,7 @@
         android:fontFamily="@font/fjord_one"
         android:text="Contact Us"
         android:textSize="20sp"
+        android:textColor="#725b53"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.936"
@@ -39,17 +41,16 @@
 
     <TextView
         android:id="@+id/tvDashboard"
-        android:layout_width="325dp"
-        android:layout_height="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/fjord_one"
         android:text="Smart Parking App"
-        android:textSize="33sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <TextView
         android:id="@+id/tvWelcome"
@@ -60,10 +61,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.519" />
 
     <Button
         android:id="@+id/btnBookingForm"
@@ -73,6 +74,7 @@
         android:fontFamily="@font/fjord_one"
         android:text="Booking Form"
         android:textSize="20sp"
+        android:textColor="#725b53"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -88,6 +90,7 @@
         android:fontFamily="@font/fjord_one"
         android:text="Coupon"
         android:textSize="20sp"
+        android:textColor="#725b53"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.936"
@@ -103,6 +106,7 @@
         android:fontFamily="@font/fjord_one"
         android:text="My Profile"
         android:textSize="20sp"
+        android:textColor="#725b53"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -118,6 +122,7 @@
         android:fontFamily="@font/fjord_one"
         android:text="LOGOUT"
         android:textSize="20sp"
+        android:textColor="#725b53"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.936"
@@ -127,14 +132,15 @@
 
     <ImageView
         android:id="@+id/ivdashboard"
-        android:layout_width="431dp"
-        android:layout_height="325dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189"
-        app:srcCompat="@mipmap/parkinglot" />
+        app:layout_constraintVertical_bias="0.079"
+        app:srcCompat="@mipmap/asas" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
