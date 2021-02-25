@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">LoginDemo</string>
+    <string-array name="Hours">
+        <item>1 Hour</item>
+        <item>2 Hours</item>
+        <item>3 Hours</item>
+        <item>4 Hours</item>
+        <item>5 Hours</item>
+        <item>6 Hours</item>
+        <item>7 Hours</item>
+        <item>8 Hours</item>
+        <item>9 Hours</item>
+        <item>10 Hours</item>
+        <item>11 Hours</item>
+        <item>12 Hours</item>
+
+    </string-array>
 </resources>

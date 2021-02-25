@@ -7,12 +7,19 @@ import android.content.Intent;
 import android.view.View;
 
 import android.os.Bundle;
+import android.widget.CalendarView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.w3c.dom.Text;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, bookingForm;
+    private Button clickProfile, Logout, bookingForm, coupon;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -23,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
         clickProfile = findViewById(R.id.btnMyProfile);
         Logout = findViewById(R.id.btnLogout);
         bookingForm = findViewById(R.id.btnBookingForm);
+        coupon = findViewById(R.id.btnCoupon);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -37,7 +45,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        ////Direct buttons from SecondActivity to their own activities//////////////////////
+        ////Direct buttons from SecondActivity to their own activities/////////////////////////////////////////////////
 
         clickProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +60,16 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this, BookingForm.class));
             }
         });
+
+        coupon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, Coupon.class));
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     }
 
     /////LOGOUT FUNCTION/////////////////////////////////////////////////

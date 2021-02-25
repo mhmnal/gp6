@@ -3,5 +3,6 @@
         app:fontProviderAuthority="com.google.android.gms.fonts"
         app:fontProviderPackage="com.google.android.gms"
         app:fontProviderQuery="Fjord One"
-        app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+    app:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
+    >
 </font-family>
