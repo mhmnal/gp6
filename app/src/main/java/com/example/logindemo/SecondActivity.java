@@ -19,7 +19,7 @@ import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, bookingForm, coupon;
+    private Button clickProfile, Logout, coupon;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -29,7 +29,6 @@ public class SecondActivity extends AppCompatActivity {
 
         clickProfile = findViewById(R.id.btnMyProfile);
         Logout = findViewById(R.id.btnLogout);
-        bookingForm = findViewById(R.id.btnBookingForm);
         coupon = findViewById(R.id.btnCoupon);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -51,13 +50,6 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
-            }
-        });
-
-        bookingForm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, BookingForm.class));
             }
         });
 

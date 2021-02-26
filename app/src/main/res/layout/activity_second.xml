@@ -2,134 +2,122 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#efdcd5"
+    android:background="@drawable/background"
     tools:context=".SecondActivity">
 
 
     <Button
         android:id="@+id/btnAboutUs"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="ABOUT US"
-        android:textSize="20sp"
         android:textColor="#725b53"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
-
-    <Button
-        android:id="@+id/btnContactUs"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/fjord_one"
-        android:text="Contact Us"
-        android:textSize="20sp"
-        android:textColor="#725b53"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
-
-    <Button
-        android:id="@+id/btnBookingForm"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
-        android:background="@drawable/rounded_corners"
-        android:fontFamily="@font/fjord_one"
-        android:text="Booking Form"
-        android:textSize="20sp"
-        android:textColor="#725b53"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.854" />
 
     <Button
         android:id="@+id/btnCoupon"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="Coupon"
-        android:textSize="20sp"
         android:textColor="#725b53"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.724" />
 
     <Button
         android:id="@+id/btnMyProfile"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="My Profile"
-        android:textSize="20sp"
         android:textColor="#725b53"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972" />
+        app:layout_constraintVertical_bias="0.725" />
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="160dp"
-        android:layout_height="90dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="LOGOUT"
-        android:textSize="20sp"
         android:textColor="#725b53"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <ImageView
         android:id="@+id/ivdashboard"
-        android:layout_width="201dp"
-        android:layout_height="189dp"
+
+        android:layout_width="259dp"
+        android:layout_height="234dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
-        app:srcCompat="@mipmap/asas" />
+        app:layout_constraintVertical_bias="0.123"
+        app:srcCompat="@drawable/dashboard" />
 
     <TextView
         android:id="@+id/tvDashboard"
-        android:layout_width="220dp"
-        android:layout_height="23dp"
+        android:layout_width="270dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:fontFamily="@font/fjord_one"
         android:text="SMART PARKING APP"
-        android:textSize="20sp"
+        android:textColor="#fffffb"
+        android:textSize="23sp"
+
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.383" />
 
+    <TextView
+        android:id="@+id/tvContactUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fjord_one"
+        android:text="Need help? Contact Us!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ import java.util.Calendar;
 public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , SingleChoiceDialog.SingleChoiceListener , TimePickerDialog.OnTimeSetListener {
 
     TextView Hour,DisplayChoice;
+    Button Confirm;
     boolean[] selectedDay;
     ArrayList<Integer> daylist = new ArrayList<>();
     String[] dayArray = {"1 Hour", "2 Hours","3 Hours", "4 Hours","5 Hours", "6 Hours","7 Hours", "8 Hours","9 Hours", "10 Hours","11 Hours", "12 Hours"};
@@ -37,8 +39,10 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
                     String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
                     TextView textView = findViewById(R.id.tvDate2);
+                    Confirm = (Button) findViewById(R.id.btnConfirm);
                     Hour = findViewById(R.id.tvTime);
                     textView.setText(currentDate);
+
 
                     Button button = (Button) findViewById(R.id.btnCalendar);
                     button.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +52,15 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
                             datePicker.show(getSupportFragmentManager(),"date picker");
                         }
                     });
+
+                    ////////////////////////////////////Direct from COUPON TO BOOKING FORM//////////////////////////
+                   Confirm.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           startActivity(new Intent(Coupon.this ,BookingForm.class ));
+                       }
+                   });
+                   //////////////////////////////////////////////////////////////////////////////////////////////////
 
                     //////////TIME PICKER///////////////////////////////////////////////////////
                     DisplayChoice = findViewById(R.id.tvTime);
