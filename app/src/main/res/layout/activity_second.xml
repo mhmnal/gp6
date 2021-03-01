@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/dashboard"
     tools:context=".SecondActivity">
 
 
@@ -16,8 +16,9 @@
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="ABOUT US"
-        android:textColor="#725b53"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
@@ -32,8 +33,9 @@
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="Coupon"
-        android:textColor="#725b53"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.191"
@@ -50,8 +52,9 @@
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="My Profile"
-        android:textColor="#725b53"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
@@ -66,8 +69,9 @@
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="LOGOUT"
-        android:textColor="#725b53"
+        android:textColor="#1E3D59"
         android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
@@ -75,36 +79,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85" />
 
-    <ImageView
-        android:id="@+id/ivdashboard"
-
-        android:layout_width="259dp"
-        android:layout_height="234dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123"
-        app:srcCompat="@drawable/dashboard" />
-
     <TextView
         android:id="@+id/tvDashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:fontFamily="@font/fatinlove"
-        android:text="SMART PARKING APP"
-        android:textColor="#fffffb"
-        android:textSize="50sp"
+        android:fontFamily="@font/carnivales"
+        android:text="SMART PARKING "
+        android:textColor="#F5F0E1"
+        android:textSize="45sp"
 
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
+        app:layout_constraintVertical_bias="0.611" />
 
     <TextView
         android:id="@+id/tvContactUs"
@@ -112,6 +103,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fjord_one"
         android:text="Need help? Contact Us!"
+        android:textColor="#F5F0E1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.195"

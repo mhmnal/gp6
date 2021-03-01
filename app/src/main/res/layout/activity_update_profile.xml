@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fffffb"
+    android:background="#1E3D59"
     tools:context=".UpdateProfile">
 
 
@@ -16,6 +16,10 @@
         android:fontFamily="@font/fjord_one"
         android:hint="Name"
         android:inputType="textPersonName"
+        android:textColor="#F5F0E1"
+        android:textColorHighlight="#F5F0E1"
+        android:textColorHint="#F5F0E1"
+        android:textColorLink="#F5F0E1"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,14 +32,19 @@
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/rounded_corners"
+        android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="Save"
+        android:textColor="#1E3D59"
+        android:textColorHighlight="#1E3D59"
+        android:textColorHint="#1E3D59"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
 
     <ImageView
         android:id="@+id/ivPictureUpdate"
@@ -54,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fjord_one"
+        android:textColor="#F5F0E1"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -13,19 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDemo">
-        <activity android:name=".LoginScreen">
+        <activity android:name=".splashScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity android:name=".LoginScreen"/>
+
         <activity
             android:name=".Coupon"
             android:screenOrientation="portrait" />
-
-
         <activity
             android:name=".BookingForm"
             android:screenOrientation="portrait" />
@@ -49,8 +48,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"

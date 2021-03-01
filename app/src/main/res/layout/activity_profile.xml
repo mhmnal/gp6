@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fffffb"
+    android:background="#F5F0E1"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -14,6 +14,7 @@
         android:background="#00FFFFFF"
         android:fontFamily="@font/fjord_one"
         android:text="Email"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,29 +26,33 @@
         android:id="@+id/btnProfileUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
+        android:background="@drawable/btnsettings"
         android:fontFamily="@font/fjord_one"
         android:text="Edit"
+        android:textColor="#F5F0E1"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileEmail"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.627" />
 
     <Button
         android:id="@+id/btnChangePassword"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
+        android:background="@drawable/btnsettings"
         android:fontFamily="@font/fjord_one"
         android:text="Change Password"
+        android:textColor="#F5F0E1"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.866" />
 
     <TextView
         android:id="@+id/tvProfileName"
@@ -57,6 +62,7 @@
         android:fontFamily="@font/fjord_one"
         android:gravity="center"
         android:text="Name"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,6 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fjord_one"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fjord_one"
+        android:textColor="#1E3D59"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
