@@ -15,6 +15,11 @@
         android:ems="10"
         android:fontFamily="@font/fjord_one"
         android:hint="Email"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+
+
+        android:drawablePadding="12dp"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,8 +34,12 @@
         android:layout_height="40dp"
         android:layout_marginTop="23dp"
         android:ems="10"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:fontFamily="@font/fjord_one"
+
         android:hint="Password"
+        android:drawablePadding="12dp"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,17 +50,17 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_corners"
         android:fontFamily="@font/fjord_one"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintHorizontal_bias="0.643"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_Password"
-        app:layout_constraintVertical_bias="0.807" />
+        app:layout_constraintVertical_bias="0.188" />
 
     <TextView
         android:id="@+id/txt_attempts"
@@ -62,9 +71,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintVertical_bias="0.569" />
 
     <TextView
         android:id="@+id/txt_register"
@@ -89,7 +99,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/asas" />
+        app:srcCompat="@mipmap/park" />
 
     <TextView
         android:id="@+id/txt_password"
@@ -99,8 +109,9 @@
         android:text="Forgot Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_attempts"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.753" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

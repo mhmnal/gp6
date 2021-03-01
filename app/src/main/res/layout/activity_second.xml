@@ -89,14 +89,14 @@
 
     <TextView
         android:id="@+id/tvDashboard"
-        android:layout_width="270dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:fontFamily="@font/fjord_one"
+        android:fontFamily="@font/fatinlove"
         android:text="SMART PARKING APP"
         android:textColor="#fffffb"
-        android:textSize="23sp"
+        android:textSize="50sp"
 
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

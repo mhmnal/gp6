@@ -50,6 +50,8 @@ public class RegistrationActivity extends AppCompatActivity {
     Uri imagePath;
     private StorageReference storageReference;
 
+
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -186,8 +188,12 @@ public class RegistrationActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference("UserInfo").child(firebaseAuth.getUid());
+
+        //IMAGES DATABASE///////////////////////////////////////////////////////////////////////////////////////////////////////
         StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic");
         UploadTask uploadTask = imageReference.putFile(imagePath);
+
+
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -199,7 +205,11 @@ public class RegistrationActivity extends AppCompatActivity {
                 Toast.makeText(RegistrationActivity.this,"Upload successful",Toast.LENGTH_SHORT).show();
             }
         });
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         UserProfile userProfile = new UserProfile(email, name);
         myRef.setValue(userProfile);
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
