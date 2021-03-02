@@ -31,7 +31,7 @@
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="Save"

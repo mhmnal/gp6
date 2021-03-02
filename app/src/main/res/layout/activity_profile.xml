@@ -25,7 +25,7 @@
     <Button
         android:id="@+id/btnProfileUpdate"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:background="@drawable/btnsettings"
         android:fontFamily="@font/fjord_one"
         android:text="Edit"
@@ -41,7 +41,7 @@
     <Button
         android:id="@+id/btnChangePassword"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:background="@drawable/btnsettings"
         android:fontFamily="@font/fjord_one"
         android:text="Change Password"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.086"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@mipmap/camera" />
 
     <TextView
         android:id="@+id/tvProfileName2"

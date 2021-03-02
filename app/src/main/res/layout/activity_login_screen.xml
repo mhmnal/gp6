@@ -11,7 +11,7 @@
     <Button
         android:id="@+id/btnLoginScr"
         android:layout_width="140dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="LOGIN"
@@ -28,7 +28,7 @@
     <Button
         android:id="@+id/btnRegisterScr"
         android:layout_width="140dp"
-        android:layout_height="45dp"
+        android:layout_height="30dp"
         android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="REGISTER"

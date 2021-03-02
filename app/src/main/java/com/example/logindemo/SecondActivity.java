@@ -19,7 +19,8 @@ import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, coupon;
+    private Button clickProfile, Logout, coupon,aboutus;
+    private TextView contactus;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -30,6 +31,9 @@ public class SecondActivity extends AppCompatActivity {
         clickProfile = findViewById(R.id.btnMyProfile);
         Logout = findViewById(R.id.btnLogout);
         coupon = findViewById(R.id.btnCoupon);
+        aboutus = findViewById(R.id.btnAboutUs);
+        contactus = findViewById(R.id.tvContactUs);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -57,6 +61,20 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, Coupon.class));
+            }
+        });
+
+        aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, AboutUs.class));
+            }
+        });
+
+        contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, ContactUs.class));
             }
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////
