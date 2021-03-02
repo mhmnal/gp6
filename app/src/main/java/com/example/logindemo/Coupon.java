@@ -21,10 +21,10 @@ import java.util.Calendar;
 public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , SingleChoiceDialog.SingleChoiceListener , TimePickerDialog.OnTimeSetListener{
 
     TextView DisplayChoice,Date,TimeDay;
-    String calendar,time,Hour2;
+    String calendar,time,Hour2,currentDateString,timeofDay;
     Button Confirm,button,Time,buttons;
     private FirebaseDatabase rootNode;
-    private DatabaseReference  reference;
+    private DatabaseReference reference;
     boolean[] selectedDay;
     ArrayList<Integer> daylist = new ArrayList<>();
     String[] dayArray = {"1 Hour", "2 Hours","3 Hours", "4 Hours","5 Hours", "6 Hours","7 Hours", "8 Hours","9 Hours", "10 Hours","11 Hours", "12 Hours"};
@@ -85,30 +85,24 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
 
 
         ///////////////////////ON BUTTON CLICK//////////////////////////////////////////////////////////////
-
-        Confirm.setOnClickListener(new View.OnClickListener() {
+       Confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reference = FirebaseDatabase.getInstance().getReference("Coupon");
+                //GET ALL THE VALUES
+
+                CouponInfo couponInfo = new CouponInfo();
+                couponInfo.setCal(currentDateString);
+                couponInfo.setTimeOfDay(timeofDay);
+               /* couponInfo.setCal("currentDateString");
+                couponInfo.setTimeOfDay("timeofDay");
+                couponInfo.setHourss("timeofDay");*/
+                reference.setValue(couponInfo);
+
+
                 startActivity(new Intent(Coupon.this ,BookingForm.class ));
             }
         });
-
-       /* Confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Coupon");
-                //GET ALL THE VALUES
-                String cal = button.getText().toString().trim();
-                String timeOfDay = Time.getText().toString().trim();
-                String Hourss = buttons.getText().toString().trim();
-
-                CouponInfo couponInfo = new CouponInfo(cal,timeOfDay,Hourss);
-                reference.setValue(couponInfo);
-            }
-        });*/
-
-
     }
 
 
@@ -119,7 +113,7 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String currentDateString = DateFormat.getDateInstance().format(c.getTime());
+        currentDateString = DateFormat.getDateInstance().format(c.getTime());
         Date = findViewById(R.id.tvDate3);
         Date.setText(currentDateString);
 
@@ -139,8 +133,9 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TimeDay = (TextView) findViewById(R.id.tvTimeOfTheDay);
-        TimeDay.setText(hourOfDay + ":" + minute);
+        TimeDay = findViewById(R.id.tvTimeOfTheDay);
+        timeofDay = hourOfDay + ":" + minute;
+        TimeDay.setText(timeofDay);
     }
 
 
@@ -150,7 +145,6 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
         calendar = Date.getText().toString();
         time = TimeDay.getText().toString();
         Hour2 = DisplayChoice.getText().toString();
-
 
 
         return result;

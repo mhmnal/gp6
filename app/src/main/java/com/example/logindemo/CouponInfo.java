@@ -3,51 +3,38 @@ package com.example.logindemo;
 public class CouponInfo {
 
     //////////////////////////VARIABLES//////////////////////////
-    public String cal,timeOfDay, Hourss;
-
-
+    public String cal,timeOfDay, hourss;
 
     public CouponInfo(){
-
     }
 
-    public CouponInfo(String cal,String timeOfDay,String Hourss){
+    public CouponInfo(String cal,String timeOfDay,String hourss){
         this.cal = cal;
         this.timeOfDay= timeOfDay;
-        this.Hourss = Hourss;
+        this.hourss = hourss;
     }
 
     public String getCal() {
-
         return cal;
     }
 
-    public void  setCal(String userDate) {
-
+    public void setCal(String cal) {
         this.cal = cal;
     }
 
     public String getTimeOfDay() {
-
         return timeOfDay;
     }
 
-    public void  setTimeOfDay(String userTimeOfDay) {
-
-        this.timeOfDay = userTimeOfDay;
+    public void setTimeOfDay(String timeOfDay) {
+        this.timeOfDay = timeOfDay;
     }
 
-    public String getHourss(){
-
-        return Hourss;
+    public String getHourss() {
+        return hourss;
     }
 
-    public void getHourss(String Hourss) {
-
-        this.Hourss = Hourss;
+    public void setHourss(String hourss) {
+        this.hourss = hourss;
     }
-
-
-
-
 }

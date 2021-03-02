@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_password);
