@@ -8,7 +8,7 @@
     tools:context=".BookingForm">
 
     <EditText
-        android:id="@+id/etCarPlate"
+        android:id="@+id/eelate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.733" />
 
     <EditText
-        android:id="@+id/etPhoneNumber"
+        android:id="@+id/ea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/etCarColor"
+        android:id="@+id/ed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="0.581" />
 
     <EditText
-        android:id="@+id/etCarModel"
+        android:id="@+id/ec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -134,7 +134,7 @@
         app:layout_constraintVertical_bias="0.429" />
 
     <EditText
-        android:id="@+id/etCarBrand"
+        android:id="@+id/eb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -224,7 +224,7 @@
         app:layout_constraintVertical_bias="0.925" />
 
     <Button
-        android:id="@+id/btnBookingFormConfirm"
+        android:id="@+id/bw"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:background="@drawable/btnsettings3"

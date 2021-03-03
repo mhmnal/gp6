@@ -60,7 +60,7 @@ public class SecondActivity extends AppCompatActivity {
         coupon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, Coupon.class));
+                startActivity(new Intent(SecondActivity.this, ScrollableBookingForm.class));
             }
         });
 

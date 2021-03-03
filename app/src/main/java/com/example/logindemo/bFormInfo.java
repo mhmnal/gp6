@@ -3,16 +3,21 @@ package com.example.logindemo;
 public class bFormInfo {
 
     String phonenumber,carbrand,carmodel,carcolor,carplate;
+    String cal,timeOfDay, hourss;
+
 
     public bFormInfo() {
     }
 
-    public bFormInfo(String phonenumber, String carbrand, String carmodel, String carcolor, String carplate) {
+    public bFormInfo(String phonenumber, String carbrand, String carmodel, String carcolor,String carplate,String cal,String timeOfDay,String hourss) {
         this.phonenumber = phonenumber;
         this.carbrand = carbrand;
         this.carmodel = carmodel;
         this.carcolor = carcolor;
         this.carplate = carplate;
+        this.cal = cal;
+        this.timeOfDay= timeOfDay;
+        this.hourss = hourss;
     }
 
     public String getPhonenumber() {
@@ -54,4 +59,29 @@ public class bFormInfo {
     public void setCarplate(String carplate) {
         this.carplate = carplate;
     }
+
+    public String getCal() {
+        return cal;
+    }
+
+    public void setCal(String cal) {
+        this.cal = cal;
+    }
+
+    public String getTimeOfDay() {
+        return timeOfDay;
+    }
+
+    public void setTimeOfDay(String timeOfDay) {
+        this.timeOfDay = timeOfDay;
+    }
+
+    public String getHourss() {
+        return hourss;
+    }
+
+    public void setHourss(String hourss) {
+        this.hourss = hourss;
+    }
+
 }

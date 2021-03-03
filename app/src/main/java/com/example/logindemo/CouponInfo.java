@@ -1,11 +1,15 @@
 package com.example.logindemo;
 
-public class CouponInfo {
+
+import android.app.Application;
+
+public class CouponInfo{
 
     //////////////////////////VARIABLES//////////////////////////
     public String cal,timeOfDay, hourss;
 
     public CouponInfo(){
+
     }
 
     public CouponInfo(String cal,String timeOfDay,String hourss){
@@ -13,6 +17,10 @@ public class CouponInfo {
         this.timeOfDay= timeOfDay;
         this.hourss = hourss;
     }
+
+
+
+
 
     public String getCal() {
         return cal;

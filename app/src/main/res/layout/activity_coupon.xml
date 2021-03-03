@@ -12,10 +12,12 @@
         android:id="@+id/tvDate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:fontFamily="@font/fjord_one"
         android:text="Date"
         android:textColor="#1E3D59"
         android:textColorHint="#FFFFFF"
+
         android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,11 +71,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalendar"
+        app:layout_constraintTop_toBottomOf="@+id/ba"
         app:layout_constraintVertical_bias="0.085" />
 
     <Button
-        android:id="@+id/btnCalendar"
+        android:id="@+id/ba"
         android:layout_width="124dp"
         android:layout_height="38dp"
         android:background="@drawable/btnsettings"
@@ -106,7 +108,7 @@
         app:layout_constraintVertical_bias="0.4" />
 
     <Button
-        android:id="@+id/btnTimeSelect"
+        android:id="@+id/bi"
         android:layout_width="124dp"
         android:layout_height="38dp"
         android:layout_marginBottom="348dp"
@@ -139,7 +141,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTimeSelect"
+        app:layout_constraintTop_toBottomOf="@+id/bi"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -155,30 +157,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.62" />
 
-    <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fjord_one"
-        android:textColor="#1E3D59"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
-
-    <Button
-        android:id="@+id/btnTime"
+    <Spinner
+        android:id="@+id/bu"
         android:layout_width="124dp"
-        android:layout_height="38dp"
+        android:layout_height="50dp"
         android:background="@drawable/btnsettings"
         android:fontFamily="@font/fjord_one"
-        android:text="Select Here"
+        android:gravity="center"
+        android:popupBackground="@drawable/btnsettings"
         android:textColor="#F5F0E1"
-        android:textColorHint="#FFFFFF"
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -236,5 +225,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.941" />
+
+    <TextView
+        android:id="@+id/tvHours2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvTips3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

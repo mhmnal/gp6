@@ -1,3 +1,4 @@
+/*
 package com.example.logindemo;
 
 
@@ -8,73 +9,88 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.lang.reflect.Array;
+import java.sql.Time;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , SingleChoiceDialog.SingleChoiceListener , TimePickerDialog.OnTimeSetListener{
+public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener, AdapterView.OnItemSelectedListener {
 
-    TextView DisplayChoice,Date,TimeDay;
-    String calendar,time,Hour2,currentDateString,timeofDay;
-    Button Confirm,button,Time,buttons;
-    private FirebaseDatabase rootNode;
+    public static final String CAL_RECEIPT ="com.example.logindemo.CAL_RECEIPT";
+    public static final String CAL_TOD ="com.example.logindemo.CAL_TOD";
+    public static final String CAL_HOURS ="com.example.logindemo.CAL_HOURS";
+    TextView Date,TimeDay,Hourstv;
+    public String currentDateString,timeofDay,clickedJamList,RecCal,RecTod,RecHours;
+    Button Confirm,button,buttons;
     private DatabaseReference reference;
-    boolean[] selectedDay;
-    ArrayList<Integer> daylist = new ArrayList<>();
-    String[] dayArray = {"1 Hour", "2 Hours","3 Hours", "4 Hours","5 Hours", "6 Hours","7 Hours", "8 Hours","9 Hours", "10 Hours","11 Hours", "12 Hours"};
+    private ArrayList<spinItem> mJamList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-                    super.onCreate(savedInstanceState);
-                    setContentView(R.layout.activity_coupon);
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_coupon);
+
+            //DATE/////////////////////////////////////////////////////////////////////
+            Calendar calendar = Calendar.getInstance();
+            String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
 
+            //VARIABLES//////////////////////////////////////////////////////////////
+            Confirm = findViewById(R.id.btnConfirm);
+            TextView textView = findViewById(R.id.tvDate2);
+            textView.setText(currentDate);
+            button = findViewById(R.id.btnCalendar);
+            buttons = findViewById(R.id.btnTimeSelect);
+            Spinner spinnerJam = findViewById(R.id.btnTime);
+            Hourstv = findViewById(R.id.tvHours2);
 
+            ///////////FIREBASE GET INSTANCE/////////////////////////////////////
+            FirebaseDatabase.getInstance();
 
-                    //DATE/////////////////////////////////////////////////////////////////////
-                    Calendar calendar = Calendar.getInstance();
-                    String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
+            ////////////////////////DATE PICKER////////////////////////////////////
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DialogFragment datePicker = new DatePickerFragment();
+                    datePicker.show(getSupportFragmentManager(),"date picker");
+                }
+            });
 
+            //////////////////////////////////////SPINNER HOURS////////////////////
+            initList();
+            spinAdapter mAdapter = new spinAdapter(this, mJamList);
+            spinnerJam.setAdapter(mAdapter);
 
-                    //variables
-                    Confirm = findViewById(R.id.btnConfirm);
-                    DisplayChoice = findViewById(R.id.tvTime);
-                    TextView textView = findViewById(R.id.tvDate2);
-                    textView.setText(currentDate);
-                    button = findViewById(R.id.btnCalendar);
-                    Time = findViewById(R.id.btnTime);
-                    buttons = findViewById(R.id.btnTimeSelect);
+            spinnerJam.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    spinItem clickedItem = (spinItem)parent.getItemAtPosition(position);
+                    clickedJamList = clickedItem.getJam();
+                    Hourstv.setText(clickedJamList);
+                }
 
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
 
+                }
+            });
 
-                    button.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            DialogFragment datePicker = new DatePickerFragment();
-                            datePicker.show(getSupportFragmentManager(),"date picker");
-                        }
-                    });
-
-
-                    Time.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            DialogFragment singleChoiceDialog = new SingleChoiceDialog();
-                            singleChoiceDialog.setCancelable(false);
-                            singleChoiceDialog.show(getSupportFragmentManager(),"Single Choice Dialog");
-                        }
-                    });
-
-
-
-            ////////////////TIME OF THE DAY PICKER////////////////////////////////////
-            buttons = (Button) findViewById(R.id.btnTimeSelect);
+            ////////////////////TIME PICKER///////////////////////////////////////////////////////////////////////////////////
             buttons.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -84,26 +100,31 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
             });
 
 
-        ///////////////////////ON BUTTON CLICK//////////////////////////////////////////////////////////////
-       Confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                reference = FirebaseDatabase.getInstance().getReference("Coupon");
-                //GET ALL THE VALUES
+            ///////////////////////CONFIRM BUTTON CLICK//////////////////////////////////////////////////////////////
+           Confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                CouponInfo couponInfo = new CouponInfo();
-                couponInfo.setCal(currentDateString);
-                couponInfo.setTimeOfDay(timeofDay);
-               /* couponInfo.setCal("currentDateString");
-                couponInfo.setTimeOfDay("timeofDay");
-                couponInfo.setHourss("timeofDay");*/
-                reference.setValue(couponInfo);
+                    reference = FirebaseDatabase.getInstance().getReference("Coupon").child(currentDateString);
+                    //GET ALL THE VALUES
+                    CouponInfo couponInfo = new CouponInfo();
+                    couponInfo.setCal(currentDateString);
+                    couponInfo.setTimeOfDay(timeofDay);
+                    couponInfo.setHourss(clickedJamList);
+                    reference.setValue(couponInfo);
+
+                    Intent intent = new Intent(Coupon.this ,BookingForm.class );
+                    startActivity(intent);
+
+                }
+            });
 
 
-                startActivity(new Intent(Coupon.this ,BookingForm.class ));
-            }
-        });
     }
+                                ///////////END OF ONCREATE/////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -119,18 +140,6 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
 
     }
 
-
-
-    @Override
-    public void onPositiveButtonClicked(String[] list, int position) {
-        DisplayChoice.setText(list[position]);
-    }
-
-    @Override
-    public void onNegativeButtonClicked() {
-        DisplayChoice.setText("Select Hour/s");
-    }
-
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         TimeDay = findViewById(R.id.tvTimeOfTheDay);
@@ -140,16 +149,34 @@ public class Coupon extends AppCompatActivity implements DatePickerDialog.OnDate
 
 
 
-    private Boolean validate(){
-        Boolean result = false;
-        calendar = Date.getText().toString();
-        time = TimeDay.getText().toString();
-        Hour2 = DisplayChoice.getText().toString();
 
 
-        return result;
+///////////////////////////////SPINNER STUFFS///////////////////////////////////////////
+
+    private void initList(){
+        mJamList = new ArrayList<>();
+        mJamList.add(new spinItem("1  Hour"));
+        mJamList.add(new spinItem("2 Hours"));
+        mJamList.add(new spinItem("3 Hours"));
+        mJamList.add(new spinItem("4 Hours"));
+        mJamList.add(new spinItem("5 Hours"));
+        mJamList.add(new spinItem("6 Hours"));
+        mJamList.add(new spinItem("7 Hours"));
+        mJamList.add(new spinItem("8 Hours"));
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT);
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
 
-
-}
+}*/

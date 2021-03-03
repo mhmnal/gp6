@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDemo">
-        <activity android:name=".ContactUs"></activity>
+        <activity android:name=".ScrollableBookingForm"></activity>
+        <activity android:name=".ViewReceipt" />
+        <activity android:name=".ContactUs" />
         <activity android:name=".AboutUs" />
         <activity android:name=".splashScreen">
             <intent-filter>
