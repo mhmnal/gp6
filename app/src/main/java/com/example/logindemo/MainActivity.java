@@ -38,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Name = (EditText)findViewById(R.id.txt_name);
-        Password = (EditText)findViewById(R.id.txt_Password);
-        Info = (TextView)findViewById(R.id.txt_attempts);
-        Login = (Button)findViewById(R.id.btn_login);
-        TextView userRegistration = (TextView) findViewById(R.id.txt_register);
-        forgotPassword = (TextView)findViewById(R.id.txt_password);
+        Name = findViewById(R.id.txt_name);
+        Password = findViewById(R.id.txt_Password);
+        Info = findViewById(R.id.txt_attempts);
+        Login = findViewById(R.id.btn_login);
+        TextView userRegistration = findViewById(R.id.txt_register);
+        forgotPassword = findViewById(R.id.txt_password);
 
         Info.setText("Attempts: 5");
 

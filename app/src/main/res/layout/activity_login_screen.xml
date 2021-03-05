@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcomebg"
+    android:background="@drawable/design3"
     tools:context=".LoginScreen">
 
 
     <Button
         android:id="@+id/btnLoginScr"
         android:layout_width="140dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="LOGIN"
@@ -23,12 +23,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
+        app:layout_constraintVertical_bias="0.712" />
 
     <Button
         android:id="@+id/btnRegisterScr"
         android:layout_width="140dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="REGISTER"
@@ -40,16 +40,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.58" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/fatinlove"
-        android:text="WELCOME!"
+        android:fontFamily="@font/carnivales"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="SMART PARKING"
         android:textColor="#F5F0E1"
-        android:textSize="80sp"
+        android:textSize="65sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

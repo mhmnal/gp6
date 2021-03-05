@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,27 +17,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class ViewReceipt extends AppCompatActivity {
 
-    private TextView receiptDate,receiptTime,receiptHours,receiptPn,receiptCb,receiptCm,receiptCc,receiptCp;
-
+    private TextView price,receiptDate,receiptTime,receiptHours,receiptPn,receiptCb,receiptCm,receiptCc,receiptCp,bDasboard;
+    private Button reset;
+    private FirebaseAuth firebaseAuth;
+    String name,hour,prices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_view_receipt);
-
-        Intent intent3 = getIntent();
-        String RecCal = intent3.getStringExtra(ScrollableBookingForm.CAL_RECEIPT);
-        String RecTod = intent3.getStringExtra(ScrollableBookingForm.CAL_TOD);
-        String RecHours = intent3.getStringExtra(ScrollableBookingForm.CAL_HOURS);
-        String phonenumber = intent3.getStringExtra(ScrollableBookingForm.PN_RECEIPT);
-        String carbrand = intent3.getStringExtra(ScrollableBookingForm.CB_RECEIPT);
-        String carmodel = intent3.getStringExtra(ScrollableBookingForm.CM_RECEIPT);
-        String carcolor = intent3.getStringExtra(ScrollableBookingForm.CC_RECEIPT);
-        String carplate = intent3.getStringExtra(ScrollableBookingForm.CP_RECEIPT);
 
         receiptDate = findViewById(R.id.tvReceiptDate);
         receiptTime = findViewById(R.id.tvReceiptTime);
@@ -45,60 +38,81 @@ public class ViewReceipt extends AppCompatActivity {
         receiptCm = findViewById(R.id.tvcModel);
         receiptCc = findViewById(R.id.tvCColor);
         receiptCp = findViewById(R.id.tvCPlate);
+        bDasboard = findViewById(R.id.tvBDashboard);
+        price = findViewById(R.id.tvPrice);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+       DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
 
-
-        receiptDate.setText(RecCal);
-        receiptTime.setText(RecTod);
-        receiptHours.setText(RecHours);
-        receiptPn.setText(phonenumber);
-        receiptCb.setText(carbrand);
-        receiptCm.setText(carmodel);
-        receiptCc.setText(carcolor);
-        receiptCp.setText(carplate);
-
-        /*firebaseDatabase = FirebaseDatabase.getInstance();
-        final DatabaseReference  databaseReference = firebaseDatabase.getReference("Coupon").child("");
-       final DatabaseReference databaseReference1 = firebaseDatabase.getReference("Booking").child("");
-*/
-
-
-       /* databaseReference.addValueEventListener(new ValueEventListener() {
+        reference1.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                CouponInfo classCouponInfo = dataSnapshot.getValue(CouponInfo.class);
-               *//* receiptDate.setText(classCouponInfo.getCal());
-                receiptTime.setText(classCouponInfo.getTimeOfDay());*//*
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //UserProfile userProfile = snapshot.getValue(UserProfile.class);
+                name = snapshot.child("userName").getValue().toString();
+                final DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Booking").child(name);
+
+                reference2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        bFormInfo bform = snapshot.getValue(bFormInfo.class);
+                        receiptPn.setText(bform.getPhonenumber());
+                        receiptCb.setText(bform.getCarbrand());
+                        receiptCm.setText(bform.getCarmodel());
+                        receiptCc.setText(bform.getCarcolor());
+                        receiptCp.setText(bform.getCarplate());
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                final DatabaseReference reference4 = FirebaseDatabase.getInstance().getReference("Coupon").child(name);
+                reference4.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        CouponInfo couponInfo = snapshot.getValue(CouponInfo.class);
+                        receiptDate.setText(couponInfo.getCal());
+                        receiptTime.setText(couponInfo.getTimeOfDay());
+                        receiptHours.setText(couponInfo.getHourss());
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ViewReceipt.this, error.getCode(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewReceipt.this, "Not hello", Toast.LENGTH_SHORT).show();
             }
-
-
         });
 
-        databaseReference1.addValueEventListener(new ValueEventListener() {
+
+        bDasboard.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                bFormInfo classbFormInfo = dataSnapshot.getValue(bFormInfo.class);
-                receiptCb.setText(classbFormInfo.getCarbrand());
-                receiptCm.setText(classbFormInfo.getCarmodel());
-                receiptCc.setText(classbFormInfo.getCarcolor());
-                receiptCp.setText(classbFormInfo.getCarplate());
-                receiptPn.setText(classbFormInfo.getPhonenumber());
+            public void onClick(View v) {
+                startActivity(new Intent(ViewReceipt.this, SecondActivity.class));
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+        });
 
 
-        });*/
+
+
+
+
+
+
 
 
     }
-
 }

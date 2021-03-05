@@ -5,32 +5,32 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard"
+    android:background="@drawable/design2"
     tools:context=".SecondActivity">
 
 
     <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:background="@drawable/rounded_corners"
+        android:layout_height="150dp"
+        android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
-        android:text="ABOUT US"
+        android:text="ABOUT            US"
         android:textColor="#1E3D59"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.717" />
 
     <Button
         android:id="@+id/btnCoupon"
         android:layout_width="140dp"
-        android:layout_height="45dp"
-        android:background="@drawable/rounded_corners"
+        android:layout_height="150dp"
+        android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="Coupon"
         android:textColor="#1E3D59"
@@ -38,35 +38,54 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintVertical_bias="0.436" />
 
     <Button
         android:id="@+id/btnMyProfile"
         android:layout_width="140dp"
-        android:layout_height="45dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/rounded_corners"
+        android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
-        android:text="My Profile"
+        android:text="Profile"
         android:textColor="#1E3D59"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725" />
+        app:layout_constraintVertical_bias="0.435" />
+
+    <Button
+        android:id="@+id/btnViewReceipt"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btnsettings3"
+        android:fontFamily="@font/fjord_one"
+        android:text="View      Receipt"
+        android:textColor="#1E3D59"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.716" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:background="@drawable/rounded_corners"
+        android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:text="LOGOUT"
         android:textColor="#1E3D59"
@@ -74,28 +93,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.784"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
-
-    <TextView
-        android:id="@+id/tvDashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:fontFamily="@font/carnivales"
-        android:text="SMART PARKING "
-        android:textColor="#F5F0E1"
-        android:textSize="45sp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.592"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <TextView
         android:id="@+id/tvContactUs"
@@ -110,6 +111,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.94" />
+
+    <TextView
+        android:id="@+id/tvNameD"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/carnivales"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="#1E3D59"
+        android:textSize="39sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/carnivales"
+        android:gravity="center_horizontal|center_vertical"
+        android:shadowColor="#F5F0E0"
+        android:text="WELCOME"
+        android:textColor="#F5F0E0"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvNameD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

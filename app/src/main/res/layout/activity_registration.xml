@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E3D59"
+    android:background="@drawable/dashboard1"
     android:focusableInTouchMode="false"
     tools:context=".RegistrationActivity">
 
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:background="@drawable/btnsettings3"
         android:fontFamily="@font/fjord_one"
         android:shadowColor="#4D4D4D"

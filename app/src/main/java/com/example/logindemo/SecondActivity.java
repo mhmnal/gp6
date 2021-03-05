@@ -1,7 +1,10 @@
 package com.example.logindemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.provider.ContactsContract;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
@@ -10,7 +13,14 @@ import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -19,8 +29,9 @@ import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, coupon,aboutus;
-    private TextView contactus;
+    private Button clickProfile, Logout, coupon,aboutus,viewRec;
+    private String name;
+    private TextView contactus,name2,reset;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -33,9 +44,26 @@ public class SecondActivity extends AppCompatActivity {
         coupon = findViewById(R.id.btnCoupon);
         aboutus = findViewById(R.id.btnAboutUs);
         contactus = findViewById(R.id.tvContactUs);
-
+        viewRec = findViewById(R.id.btnViewReceipt);
+        name2 = findViewById(R.id.tvNameD);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
+
+        reference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                name = snapshot.child("userName").getValue().toString();
+                name2.setText(name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         ///////////////////LOGOUT///////////////////////////////////////
 
@@ -44,7 +72,10 @@ public class SecondActivity extends AppCompatActivity {
             public void onClick(View v) {
                 firebaseAuth.signOut();
                 finish();
-                startActivity(new Intent(SecondActivity.this, MainActivity.class));
+
+
+                startActivity(new Intent(SecondActivity.this, LoginScreen.class));
+
             }
         });
 
@@ -60,7 +91,7 @@ public class SecondActivity extends AppCompatActivity {
         coupon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, ScrollableBookingForm.class));
+                startActivity(new Intent(SecondActivity.this, CouponForm.class));
             }
         });
 
@@ -77,17 +108,18 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this, ContactUs.class));
             }
         });
+
+        viewRec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, ViewReceipt.class));
+            }
+        });
         /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    }
 
-    /////LOGOUT FUNCTION/////////////////////////////////////////////////
 
-    private void Logout(){
-        firebaseAuth.signOut();
-        finish();
-        startActivity(new Intent(SecondActivity.this, MainActivity.class));
     }
 
 
