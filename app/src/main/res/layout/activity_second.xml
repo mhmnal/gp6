@@ -5,18 +5,19 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/design2"
+    android:background="@drawable/design22"
     tools:context=".SecondActivity">
 
 
     <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="140dp"
-        android:layout_height="150dp"
-        android:background="@drawable/btnsettings3"
+        android:layout_height="70dp"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="ABOUT            US"
-        android:textColor="#1E3D59"
+        android:textColor="@color/dark_blue"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,16 +25,17 @@
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <Button
         android:id="@+id/btnCoupon"
         android:layout_width="140dp"
-        android:layout_height="150dp"
-        android:background="@drawable/btnsettings3"
+        android:layout_height="70dp"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="Coupon"
-        android:textColor="#1E3D59"
+        android:textColor="@color/dark_blue"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,18 +43,19 @@
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
+        app:layout_constraintVertical_bias="0.627" />
 
     <Button
         android:id="@+id/btnMyProfile"
         android:layout_width="140dp"
-        android:layout_height="150dp"
+        android:layout_height="70dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/btnsettings3"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="Profile"
-        android:textColor="#1E3D59"
+        android:textColor="@color/dark_blue"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,18 +63,19 @@
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintVertical_bias="0.627" />
 
     <Button
         android:id="@+id/btnViewReceipt"
         android:layout_width="140dp"
-        android:layout_height="150dp"
+        android:layout_height="70dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/btnsettings3"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="View      Receipt"
-        android:textColor="#1E3D59"
+        android:textColor="@color/dark_blue"
         android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,16 +83,17 @@
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:background="@drawable/btnsettings3"
+        android:background="@drawable/btnbg1"
+        android:elevation="@dimen/_6sdp"
         android:fontFamily="@font/fjord_one"
         android:text="LOGOUT"
-        android:textColor="#1E3D59"
+        android:textColor="@color/white_primary"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,35 +119,33 @@
 
     <TextView
         android:id="@+id/tvNameD"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:fontFamily="@font/carnivales"
         android:gravity="center_horizontal|center_vertical"
-        android:textColor="#1E3D59"
+        android:textColor="@color/dark_blue"
         android:textSize="39sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.317" />
 
     <TextView
-        android:id="@+id/textView46"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="53dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/carnivales"
-        android:gravity="center_horizontal|center_vertical"
-        android:shadowColor="#F5F0E0"
+        android:fontFamily="@font/sakurata"
         android:text="WELCOME"
-        android:textColor="#F5F0E0"
-        android:textSize="70sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvNameD"
+        android:textColor="@color/white_primary"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.653"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintVertical_bias="0.082" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

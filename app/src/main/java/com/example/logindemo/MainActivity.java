@@ -40,12 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
         Name = findViewById(R.id.txt_name);
         Password = findViewById(R.id.txt_Password);
-        Info = findViewById(R.id.txt_attempts);
         Login = findViewById(R.id.btn_login);
         TextView userRegistration = findViewById(R.id.txt_register);
         forgotPassword = findViewById(R.id.txt_password);
 
-        Info.setText("Attempts: 5");
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);

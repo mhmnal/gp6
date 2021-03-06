@@ -33,9 +33,9 @@ import java.util.SimpleTimeZone;
 
 public class CouponForm extends AppCompatActivity implements
         /*DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener*/ AdapterView.OnItemSelectedListener {
-    public String name, Date, timeofDay, clickedJamList;
-    TextView TimeDay, Hourstv, currentDateString, dateView, showTime;
-    Button cForm, pickDate, pickTod;
+    public String name, clickedJamList;
+    TextView currentDateString, showTime;
+    Button cForm;
     Spinner spinnerHour;
     private DatabaseReference reference;
     private FirebaseAuth firebaseAuth;
@@ -60,7 +60,6 @@ public class CouponForm extends AppCompatActivity implements
         showTime.setText(cTime);
         cForm = findViewById(R.id.btnBookingForm);
         spinnerHour = findViewById(R.id.bu2);
-        Hourstv = findViewById(R.id.tvHours4);
 
         firebaseAuth = FirebaseAuth.getInstance();
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
@@ -88,7 +87,7 @@ public class CouponForm extends AppCompatActivity implements
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spinItem clickedItem = (spinItem) parent.getItemAtPosition(position);
                 clickedJamList = clickedItem.getJam();
-                Hourstv.setText(clickedJamList);
+
             }
 
             @Override

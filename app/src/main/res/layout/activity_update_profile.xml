@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/tvProfileH2"
+        android:id="@+id/tvProfileH1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/carnivales"
@@ -20,45 +20,84 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.041"  />
 
-    <EditText
-        android:id="@+id/etNameUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/fjord_one"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:textColor="#F5F0E1"
-        android:textColorHighlight="#F5F0E1"
-        android:textColorHint="#F5F0E1"
-        android:textColorLink="#F5F0E1"
-        android:textSize="20sp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:hapticFeedbackEnabled="true"
+        app:cardBackgroundColor="@color/white_primary"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPictureUpdate"
-        app:layout_constraintVertical_bias="0.183" />
-
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="@drawable/btnsettings3"
-        android:fontFamily="@font/fjord_one"
-        android:text="Save"
-        android:textColor="#1E3D59"
-        android:textColorHighlight="#1E3D59"
-        android:textColorHint="#1E3D59"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.901">
+
+
+        <TextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/carnivales"
+            android:text="Name"
+            android:textColor="@color/dark_blue"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/etNameUpdate"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="75sp"
+            android:background="@drawable/btnbg1"
+            android:fontFamily="@font/fjord_one"
+            android:hint="Name"
+            android:padding="15dp"
+            android:textColor="@color/white_primary"
+            android:textColorHint="@color/white_primary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvProfileEmail"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="145sp"
+            android:fontFamily="@font/carnivales"
+            android:text="Email"
+            android:textColor="@color/dark_blue"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/etEmailUpdate"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="200sp"
+            android:fontFamily="@font/fjord_one"
+            android:text="Email"
+            android:textColor="@color/dark_blue"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="280dp"
+            android:background="@drawable/btnbg2"
+            android:elevation="8dp"
+            android:fontFamily="@font/fjord_one"
+            android:text="Update"
+            android:textColor="@color/dark_blue"
+            android:textStyle="bold" />
+
+
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/ivPictureUpdate"
@@ -69,21 +108,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365"
+        app:layout_constraintVertical_bias="0.161"
         tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/etEmailUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fjord_one"
-        android:textColor="#F5F0E1"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNameUpdate"
-        app:layout_constraintVertical_bias="0.191" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

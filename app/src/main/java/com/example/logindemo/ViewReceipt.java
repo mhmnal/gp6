@@ -20,8 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ViewReceipt extends AppCompatActivity {
 
-    private TextView price, receiptDate, receiptTime, receiptHours, receiptPn, receiptCb, receiptCm, receiptCc, receiptCp, bDasboard;
-    private Button reset;
+    private TextView price, receiptDate, receiptTime, receiptHours, receiptPn, receiptCb, receiptCm, receiptCc, receiptCp;
+    private Button bDasboard;
     private FirebaseAuth firebaseAuth;
     String name, hour, prices;
 
