@@ -20,10 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ViewReceipt extends AppCompatActivity {
 
-    private TextView price,receiptDate,receiptTime,receiptHours,receiptPn,receiptCb,receiptCm,receiptCc,receiptCp,bDasboard;
+    private TextView price, receiptDate, receiptTime, receiptHours, receiptPn, receiptCb, receiptCm, receiptCc, receiptCp, bDasboard;
     private Button reset;
     private FirebaseAuth firebaseAuth;
-    String name,hour,prices;
+    String name, hour, prices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class ViewReceipt extends AppCompatActivity {
         price = findViewById(R.id.tvPrice);
 
         firebaseAuth = FirebaseAuth.getInstance();
-       DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
+        DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
 
         reference1.addValueEventListener(new ValueEventListener() {
             @Override
@@ -88,7 +88,6 @@ public class ViewReceipt extends AppCompatActivity {
                 });
 
 
-
             }
 
             @Override
@@ -104,14 +103,6 @@ public class ViewReceipt extends AppCompatActivity {
                 startActivity(new Intent(ViewReceipt.this, SecondActivity.class));
             }
         });
-
-
-
-
-
-
-
-
 
 
     }

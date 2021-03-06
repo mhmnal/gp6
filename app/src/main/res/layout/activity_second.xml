@@ -125,7 +125,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.201" />
 
     <TextView
         android:id="@+id/textView46"
@@ -139,9 +139,10 @@
         android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/tvNameD"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.528" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

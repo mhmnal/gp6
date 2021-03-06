@@ -2,14 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.LoginDemo" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_500</item>
-        <item name="colorAccent">@color/purple_500</item>
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/dark_blue</item>
         <!-- Customize your theme here. -->
-    </style>
-
-    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_image</item>
-        <item name="android:statusBarColor">@color/purple_500</item>
     </style>
 </resources>

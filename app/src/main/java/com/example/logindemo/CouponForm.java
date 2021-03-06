@@ -32,10 +32,10 @@ import java.util.Calendar;
 import java.util.SimpleTimeZone;
 
 public class CouponForm extends AppCompatActivity implements
-        /*DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener*/ AdapterView.OnItemSelectedListener{
-    public String name,Date,timeofDay,clickedJamList;
-    TextView TimeDay,Hourstv,currentDateString,dateView,showTime;
-    Button cForm,pickDate,pickTod;
+        /*DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener*/ AdapterView.OnItemSelectedListener {
+    public String name, Date, timeofDay, clickedJamList;
+    TextView TimeDay, Hourstv, currentDateString, dateView, showTime;
+    Button cForm, pickDate, pickTod;
     Spinner spinnerHour;
     private DatabaseReference reference;
     private FirebaseAuth firebaseAuth;
@@ -79,7 +79,6 @@ public class CouponForm extends AppCompatActivity implements
         });
 
 
-
         initList();
         spinAdapter mAdapter = new spinAdapter(this, mJamList);
         spinnerHour.setAdapter(mAdapter);
@@ -87,7 +86,7 @@ public class CouponForm extends AppCompatActivity implements
         spinnerHour.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spinItem clickedItem = (spinItem)parent.getItemAtPosition(position);
+                spinItem clickedItem = (spinItem) parent.getItemAtPosition(position);
                 clickedJamList = clickedItem.getJam();
                 Hourstv.setText(clickedJamList);
             }
@@ -103,7 +102,7 @@ public class CouponForm extends AppCompatActivity implements
             public void onClick(View v) {
 
                 reference = FirebaseDatabase.getInstance().getReference("Coupon").child(name);
-                CouponInfo couponInfo= new CouponInfo();
+                CouponInfo couponInfo = new CouponInfo();
                 couponInfo.setCal(cDate);
                 couponInfo.setTimeOfDay(cTime);
                 couponInfo.setHourss(clickedJamList);
@@ -115,7 +114,7 @@ public class CouponForm extends AppCompatActivity implements
 
 ///////////////////////////////SPINNER STUFFS///////////////////////////////////////////
 
-    private void initList(){
+    private void initList() {
         mJamList = new ArrayList<>();
         mJamList.add(new spinItem("1  HOUR"));
         mJamList.add(new spinItem("2 HOURS"));

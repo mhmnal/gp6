@@ -1,4 +1,4 @@
- package com.example.logindemo;
+package com.example.logindemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
- public class UpdatePassword extends AppCompatActivity {
+public class UpdatePassword extends AppCompatActivity {
 
     private Button update;
     private EditText newPassword;
@@ -37,7 +37,6 @@ import com.google.firebase.database.FirebaseDatabase;
         firebaseDatabase = FirebaseDatabase.getInstance();
 
 
-
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,10 +45,10 @@ import com.google.firebase.database.FirebaseDatabase;
                 firebaseUser.updatePassword(userPasswordNew).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(UpdatePassword.this, "Password Changed", Toast.LENGTH_SHORT).show();
                             finish();
-                        }else{
+                        } else {
                             Toast.makeText(UpdatePassword.this, "Password change failed", Toast.LENGTH_SHORT).show();
 
                         }
@@ -62,7 +61,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
         }

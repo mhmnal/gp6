@@ -14,12 +14,12 @@ public class SingleChoiceDialog extends DialogFragment {
 
     int position = 0;
 
+    public interface SingleChoiceListener {
 
-    public interface  SingleChoiceListener{
 
+        void onPositiveButtonClicked(String[] list, int position);
 
-            void onPositiveButtonClicked(String[] list, int position);
-            void onNegativeButtonClicked();
+        void onNegativeButtonClicked();
 
     }
 
@@ -45,13 +45,13 @@ public class SingleChoiceDialog extends DialogFragment {
                 .setSingleChoiceItems(list, position, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        position =1;
+                        position = 1;
                     }
                 })
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        mListener.onPositiveButtonClicked(list,position);
+                        mListener.onPositiveButtonClicked(list, position);
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

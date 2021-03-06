@@ -51,7 +51,7 @@ public class UpdateProfile extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null){
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
             imagePath = data.getData();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
@@ -71,10 +71,9 @@ public class UpdateProfile extends AppCompatActivity {
         newUserName = findViewById(R.id.etNameUpdate);
         newUserEmail = findViewById(R.id.etEmailUpdate);
         save = findViewById(R.id.btnSave);
-        updateProfilePic = (ImageView)findViewById(R.id.ivPictureUpdate);
+        updateProfilePic = (ImageView) findViewById(R.id.ivPictureUpdate);
 
         //Status bar and Action bar shenanigans////////////////////////////////////////////////////////////////////////////////////////
-
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,7 +81,6 @@ public class UpdateProfile extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-
 
 
         final DatabaseReference databaseReference = firebaseDatabase.getReference("UserInfo").child(firebaseAuth.getUid());
@@ -157,13 +155,13 @@ public class UpdateProfile extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
 
-                        Toast.makeText(UpdateProfile.this,"Upload Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateProfile.this, "Upload Failed", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                        Toast.makeText(UpdateProfile.this,"Upload Successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateProfile.this, "Upload Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(UpdateProfile.this, UpdateProfile.class));
                     }
                 });
@@ -171,12 +169,15 @@ public class UpdateProfile extends AppCompatActivity {
         });
 
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
         }
         return super.onOptionsItemSelected(item);
-    };
+    }
+
+    ;
 }

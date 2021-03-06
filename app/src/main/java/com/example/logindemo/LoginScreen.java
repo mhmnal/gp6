@@ -24,8 +24,6 @@ public class LoginScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-
-
         loginbutton = findViewById(R.id.btnLoginScr);
         registerbutton = findViewById(R.id.btnRegisterScr);
 

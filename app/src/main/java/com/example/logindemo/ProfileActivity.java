@@ -48,7 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null){
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
             imagePath = data.getData();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
@@ -131,11 +131,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
         }

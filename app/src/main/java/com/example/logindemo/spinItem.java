@@ -3,7 +3,7 @@ package com.example.logindemo;
 public class spinItem {
     private String jam;
 
-    public spinItem(String jamxml){
+    public spinItem(String jamxml) {
         jam = jamxml;
     }
 

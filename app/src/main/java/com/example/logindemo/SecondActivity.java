@@ -29,9 +29,9 @@ import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, coupon,aboutus,viewRec;
+    private Button clickProfile, Logout, coupon, aboutus, viewRec;
     private String name;
-    private TextView contactus,name2,reset;
+    private TextView contactus, name2;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -118,11 +118,7 @@ public class SecondActivity extends AppCompatActivity {
         /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
     }
-
-
 
 
 }

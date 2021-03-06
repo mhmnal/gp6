@@ -18,9 +18,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class BookingForm extends AppCompatActivity {
 
-    EditText bookPn,bookCb,bookCm,bookCc,bookCp;
+    EditText bookPn, bookCb, bookCm, bookCc, bookCp;
     Button bForm;
-    String name,phonenumber,carbrand,carmodel,carcolor,carplate;
+    String name, phonenumber, carbrand, carmodel, carcolor, carplate;
     private DatabaseReference reference3;
     private FirebaseAuth firebaseAuth;
 
@@ -35,7 +35,7 @@ public class BookingForm extends AppCompatActivity {
         bookCm = findViewById(R.id.etCarModel);
         bookCc = findViewById(R.id.etCarColor);
         bookCp = findViewById(R.id.etCarPlate);
-        bForm =  findViewById(R.id.btnBConfirm);
+        bForm = findViewById(R.id.btnBConfirm);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -74,7 +74,7 @@ public class BookingForm extends AppCompatActivity {
                 bformInfo.setCarplate(carplate);
                 reference3.setValue(bformInfo);
 
-                startActivity(new Intent(BookingForm.this , ViewReceipt.class));
+                startActivity(new Intent(BookingForm.this, ViewReceipt.class));
             }
         });
     }

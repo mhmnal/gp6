@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class spinAdapter extends ArrayAdapter<spinItem> {
 
-    public spinAdapter(Context context, ArrayList<spinItem> jamList){
+    public spinAdapter(Context context, ArrayList<spinItem> jamList) {
         super(context, 0, jamList);
 
     }
@@ -28,7 +28,7 @@ public class spinAdapter extends ArrayAdapter<spinItem> {
     }
 
     private View initView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.spinner_row, parent, false
             );
@@ -37,7 +37,7 @@ public class spinAdapter extends ArrayAdapter<spinItem> {
         TextView textViewName = convertView.findViewById(R.id.jamxml);
         spinItem currentItem = getItem(position);
 
-        if(currentItem != null) {
+        if (currentItem != null) {
             textViewName.setText(currentItem.getJam());
         }
         return convertView;

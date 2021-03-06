@@ -2,13 +2,13 @@ package com.example.logindemo;
 
 public class bFormInfo {
 
-    String phonenumber,carbrand,carmodel,carcolor,carplate;
+    String phonenumber, carbrand, carmodel, carcolor, carplate;
 
 
     public bFormInfo() {
     }
 
-    public bFormInfo(String phonenumber, String carbrand, String carmodel, String carcolor,String carplate) {
+    public bFormInfo(String phonenumber, String carbrand, String carmodel, String carcolor, String carplate) {
         this.phonenumber = phonenumber;
         this.carbrand = carbrand;
         this.carmodel = carmodel;
@@ -55,7 +55,6 @@ public class bFormInfo {
     public void setCarplate(String carplate) {
         this.carplate = carplate;
     }
-
 
 
 }

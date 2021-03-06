@@ -26,8 +26,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         passwordEmail = (EditText) findViewById(R.id.tv_fgEmail);
-        resetPassword = (Button)findViewById(R.id.btn_fgConfirm);
-        firebaseAuth =FirebaseAuth.getInstance();
+        resetPassword = (Button) findViewById(R.id.btn_fgConfirm);
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
         resetPassword.setOnClickListener(new View.OnClickListener() {
@@ -35,18 +35,18 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String useremail = passwordEmail.getText().toString().trim();
 
-                if(useremail.equals("")){
-                    Toast.makeText(ForgotPasswordActivity.this, " Enter Email ID",Toast.LENGTH_SHORT).show();
-                }else{
+                if (useremail.equals("")) {
+                    Toast.makeText(ForgotPasswordActivity.this, " Enter Email ID", Toast.LENGTH_SHORT).show();
+                } else {
                     firebaseAuth.sendPasswordResetEmail(useremail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(ForgotPasswordActivity.this, "Password Reset SENT!",Toast.LENGTH_SHORT).show();
-                            finish();
-                            startActivity(new Intent(ForgotPasswordActivity.this, MainActivity.class));
-                            }else{
-                                Toast.makeText(ForgotPasswordActivity.this, "Password Reset not sent",Toast.LENGTH_SHORT).show();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(ForgotPasswordActivity.this, "Password Reset SENT!", Toast.LENGTH_SHORT).show();
+                                finish();
+                                startActivity(new Intent(ForgotPasswordActivity.this, MainActivity.class));
+                            } else {
+                                Toast.makeText(ForgotPasswordActivity.this, "Password Reset not sent", Toast.LENGTH_SHORT).show();
 
                             }
                         }
