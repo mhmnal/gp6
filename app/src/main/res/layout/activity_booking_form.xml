@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".BookingForm">
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView"
         android:layout_width="320dp"
         android:layout_height="640dp"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shadowColorLight="#35506a"
         android:hapticFeedbackEnabled="true"
-        app:cardBackgroundColor="@color/white_primary"
-        app:cardCornerRadius="30sp"
+        app:cardCornerRadius="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -29,8 +30,8 @@
             android:elevation="10dp"
             android:fontFamily="@font/carnivales"
             android:text="BOOKING FORM"
-            android:textColor="@color/dark_blue"
-            android:textSize="50sp" />
+            android:textColor="@color/white_primary"
+            android:textSize="45sp" />
 
         <EditText
             android:id="@+id/etPhoneNumber"
@@ -38,14 +39,14 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="120sp"
-            android:background="@drawable/btnbg1"
+            android:background="@drawable/btnbg2"
             android:elevation="5dp"
             android:inputType="number"
             android:fontFamily="@font/fjord_one"
             android:hint="Phone Number"
             android:padding="10sp"
-            android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/dark_blue" />
 
         <EditText
             android:id="@+id/etCarBrand"
@@ -53,13 +54,13 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="200dp"
-            android:background="@drawable/btnbg1"
+            android:background="@drawable/btnbg2"
             android:elevation="5dp"
             android:fontFamily="@font/fjord_one"
             android:hint="Car Brand"
             android:padding="10sp"
-            android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/dark_blue" />
 
 
         <EditText
@@ -68,13 +69,13 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="280dp"
-            android:background="@drawable/btnbg1"
+            android:background="@drawable/btnbg2"
             android:elevation="5dp"
             android:fontFamily="@font/fjord_one"
             android:hint="Car Model"
             android:padding="10sp"
-            android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/dark_blue"/>
 
         <EditText
             android:id="@+id/etCarColor"
@@ -82,13 +83,13 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="360dp"
-            android:background="@drawable/btnbg1"
+            android:background="@drawable/btnbg2"
             android:elevation="5dp"
             android:fontFamily="@font/fjord_one"
             android:hint="Car Color"
             android:padding="10sp"
-            android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/dark_blue" />
 
         <EditText
             android:id="@+id/etCarPlate"
@@ -96,27 +97,28 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="440dp"
-            android:background="@drawable/btnbg1"
+            android:background="@drawable/btnbg2"
             android:elevation="5dp"
             android:fontFamily="@font/fjord_one"
             android:hint="Car Plate"
             android:padding="10sp"
-            android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColor="@color/dark_blue"
+            android:textColorHint="@color/dark_blue" />
 
-        <Button
+        <soup.neumorphism.NeumorphButton
             android:id="@+id/btnBConfirm"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="125dp"
-            android:layout_marginTop="560dp"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="530dp"
             android:background="@drawable/btnbg2"
-            android:elevation="10dp"
             android:fontFamily="@font/fjord_one"
             android:text="CONFIRM"
-            android:textColor="@color/dark_blue"
-            android:textStyle="bold" />
+            android:textColor="@color/white_primary"
+            android:textStyle="bold"
+            app:neumorph_shadowColorDark="#1b3750"
+            app:neumorph_shadowColorLight="#35506a"/>
 
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

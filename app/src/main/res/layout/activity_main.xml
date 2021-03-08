@@ -52,18 +52,21 @@
             android:textColorHighlight="@color/dark_blue"
             android:textColorHint="@color/dark_blue" />
 
-        <Button
+        <soup.neumorphism.NeumorphButton
             android:id="@+id/btn_login"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
             android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_height="65dp"
             android:layout_marginLeft="125dp"
             android:layout_marginTop="170dp"
-            android:background="@drawable/btnbg1"
-            android:elevation="8dp"
+            android:background="@color/dark_blue"
             android:fontFamily="@font/fjord_one"
             android:text="LOGIN"
             android:textColor="@color/white_primary"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="#1b3750"
+            app:neumorph_shadowColorLight="#35506a"/>
 
         <TextView
             android:id="@+id/txt_register"
@@ -73,7 +76,7 @@
             android:layout_marginTop="350dp"
             android:fontFamily="@font/fjord_one"
             android:text="Register"
-            android:textColor="@color/red"
+            android:textColor="@color/white_primary"
             android:textSize="18sp" />
 
         <TextView

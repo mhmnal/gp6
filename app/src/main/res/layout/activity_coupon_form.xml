@@ -8,21 +8,24 @@
     tools:context=".CouponForm">
 
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView4"
-        android:layout_width="200sp"
-        android:layout_height="150sp"
-        android:layout_marginTop="22dp"
-        android:elevation="6dp"
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="250sp"
+        android:layout_height="140sp"
+        android:layout_marginTop="15dp"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/white_primary"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#ddd8ca"
+        app:neumorph_shadowColorLight="#f8f5e9">
 
         <TextView
             android:layout_width="150dp"
@@ -60,14 +63,15 @@
             android:text="Click Above"
             android:textColor="@color/dark_blue" />
 
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView3"
-        android:layout_width="200sp"
-        android:layout_height="95sp"
-        android:layout_marginTop="35dp"
-        android:elevation="6dp"
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="250sp"
+        android:layout_height="120sp"
+        android:layout_marginTop="15dp"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/white_primary"
         app:cardCornerRadius="10dp"
@@ -76,7 +80,10 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#ddd8ca"
+        app:neumorph_shadowColorLight="#f8f5e9">
 
         <TextView
             android:layout_width="150dp"
@@ -98,19 +105,18 @@
             android:fontFamily="@font/fjord_one"
             android:gravity="center_horizontal"
             android:text="Time"
-            android:textSize="20dp"
             android:textColor="@color/dark_blue"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
-    <Button
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/btnBookingForm"
         android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btnbg1"
-        android:elevation="10dp"
         android:fontFamily="@font/fjord_one"
         android:shadowColor="#FFFFFF"
         android:text="Confirm"
@@ -122,13 +128,16 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView4"
-        app:layout_constraintVertical_bias="0.539" />
+        app:layout_constraintVertical_bias="0.646"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shadowColorLight="#35506a" />
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView5"
-        android:layout_width="200sp"
-        android:layout_height="95sp"
-        android:elevation="6dp"
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="250sp"
+        android:layout_height="150sp"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/white_primary"
         app:cardCornerRadius="10dp"
@@ -137,7 +146,10 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288">
+        app:layout_constraintVertical_bias="0.288"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#ddd8ca"
+        app:neumorph_shadowColorLight="#f8f5e9">
 
         <TextView
             android:layout_width="150dp"
@@ -159,11 +171,11 @@
             android:fontFamily="@font/fjord_one"
             android:gravity="center_horizontal"
             android:text="DATE"
-            android:textSize="20dp"
             android:textColor="@color/dark_blue"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
     <TextView
         android:id="@+id/textView27"

@@ -168,7 +168,6 @@ public class RegistrationActivity extends AppCompatActivity {
                         sendUserData();
                         Toast.makeText(RegistrationActivity.this, "SUCCESSFULLY REGISTWERED, VERIFICATION MAIL SENT", Toast.LENGTH_SHORT).show();
                         firebaseAuth.signOut();
-                        ;
                         finish();
                         startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
                     } else

@@ -9,68 +9,81 @@
     tools:context=".SecondActivity">
 
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnCoupon"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-        android:layout_width="157dp"
-        android:layout_height="95dp"
-        android:drawablePadding="8dp"
+    <Button
+        android:id="@+id/btnAboutUs"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
+        android:fontFamily="@font/fjord_one"
+        android:text="ABOUT            US"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
+
+    <Button
+        android:id="@+id/btnMyProfile"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="Coupon"
-        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:neumorph_lightSource="leftTop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f8f5e9" />
+        app:layout_constraintVertical_bias="0.627" />
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnAboutUs"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        android:layout_width="157dp"
-        android:layout_height="95dp"
-        android:drawablePadding="8dp"
+    <Button
+        android:id="@+id/btnMyProfile"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
-        android:text="About Us"
-        android:textSize="20dp"
+        android:text="Profile"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_shadowColorLight="#f8f5e9" />
+        app:layout_constraintVertical_bias="0.627" />
 
-    <soup.neumorphism.NeumorphButton
+    <Button
         android:id="@+id/btnViewReceipt"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        android:layout_width="157dp"
-        android:layout_height="95dp"
-        android:drawablePadding="8dp"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btnbg3"
+        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
-        android:text="Receipt"
-        android:textSize="20dp"
+        android:text="View      Receipt"
+        android:textColor="@color/black"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_shadowColorLight="#f8f5e9" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -114,10 +127,10 @@
         android:textSize="39sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.282" />
 
     <TextView
         android:id="@+id/textView2"
@@ -129,31 +142,23 @@
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.12" />
 
     <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnMyProfile"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        android:layout_width="157dp"
-        android:layout_height="95dp"
+        android:id="@+id/button"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="396dp"
         android:drawablePadding="8dp"
-        android:fontFamily="@font/fjord_one"
-        android:text="Profile"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_shadowColorLight="#f8f5e9" />
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

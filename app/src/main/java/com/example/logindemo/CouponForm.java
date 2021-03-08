@@ -115,14 +115,14 @@ public class CouponForm extends AppCompatActivity implements
 
     private void initList() {
         mJamList = new ArrayList<>();
-        mJamList.add(new spinItem("1  HOUR"));
-        mJamList.add(new spinItem("2 HOURS"));
-        mJamList.add(new spinItem("3 HOURS"));
-        mJamList.add(new spinItem("4 HOURS"));
-        mJamList.add(new spinItem("5 HOURS"));
-        mJamList.add(new spinItem("6 HOURS"));
-        mJamList.add(new spinItem("7 HOURS"));
-        mJamList.add(new spinItem("8 HOURS"));
+        mJamList.add(new spinItem("1"));
+        mJamList.add(new spinItem("2"));
+        mJamList.add(new spinItem("3"));
+        mJamList.add(new spinItem("4"));
+        mJamList.add(new spinItem("5"));
+        mJamList.add(new spinItem("6"));
+        mJamList.add(new spinItem("7"));
+        mJamList.add(new spinItem("8"));
 
     }
 

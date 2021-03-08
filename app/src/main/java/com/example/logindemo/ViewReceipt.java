@@ -17,13 +17,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
+
 
 public class ViewReceipt extends AppCompatActivity {
 
     private TextView price, receiptDate, receiptTime, receiptHours, receiptPn, receiptCb, receiptCm, receiptCc, receiptCp;
     private Button bDasboard;
     private FirebaseAuth firebaseAuth;
-    String name, hour, prices;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,7 @@ public class ViewReceipt extends AppCompatActivity {
         reference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //UserProfile userProfile = snapshot.getValue(UserProfile.class);
+
                 name = snapshot.child("userName").getValue().toString();
                 final DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Booking").child(name);
 
@@ -55,13 +57,13 @@ public class ViewReceipt extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+
                         bFormInfo bform = snapshot.getValue(bFormInfo.class);
                         receiptPn.setText(bform.getPhonenumber());
                         receiptCb.setText(bform.getCarbrand());
                         receiptCm.setText(bform.getCarmodel());
                         receiptCc.setText(bform.getCarcolor());
                         receiptCp.setText(bform.getCarplate());
-
                     }
 
                     @Override
@@ -78,6 +80,14 @@ public class ViewReceipt extends AppCompatActivity {
                         receiptDate.setText(couponInfo.getCal());
                         receiptTime.setText(couponInfo.getTimeOfDay());
                         receiptHours.setText(couponInfo.getHourss());
+
+                        String hours = couponInfo.getHourss();
+                        int newHours = Integer.parseInt(hours);
+                        double price2 = newHours * 2;
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        String newPrice = df.format(price2);
+
+                        price.setText("RM " + newPrice);
 
                     }
 
@@ -103,7 +113,5 @@ public class ViewReceipt extends AppCompatActivity {
                 startActivity(new Intent(ViewReceipt.this, SecondActivity.class));
             }
         });
-
-
     }
 }

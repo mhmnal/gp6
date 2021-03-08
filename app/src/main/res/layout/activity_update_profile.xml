@@ -83,18 +83,21 @@
             android:textColor="@color/dark_blue"
             android:textSize="20sp" />
 
-        <Button
+        <soup.neumorphism.NeumorphButton
             android:id="@+id/btnSave"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
             android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="75dp"
             android:layout_marginTop="280dp"
             android:background="@drawable/btnbg2"
-            android:elevation="8dp"
             android:fontFamily="@font/fjord_one"
             android:text="Update"
             android:textColor="@color/dark_blue"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="#ddd8ca"
+            app:neumorph_shadowColorLight="#f8f5e9"/>
 
 
     </androidx.cardview.widget.CardView>

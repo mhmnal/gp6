@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.logindemo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.intuit.ssp:ssp-android:1.0.6'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.github.fornewid:neumorphism:0.3.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875">
+        app:layout_constraintVertical_bias="0.869">
 
         <EditText
             android:id="@+id/et_username"
@@ -66,18 +66,21 @@
             android:textColorHint="@color/white_primary" />
 
 
-        <Button
+        <soup.neumorphism.NeumorphButton
             android:id="@+id/btn_register"
             android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_height="65dp"
             android:layout_marginLeft="125dp"
             android:layout_marginTop="240dp"
-            android:background="@drawable/btnbg2"
-            android:elevation="5dp"
+            android:background="@color/white_primary"
             android:fontFamily="@font/fjord_one"
             android:text="SIGN UP"
             android:textColor="@color/dark_blue"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="#ddd8ca"
+            app:neumorph_shadowColorLight="#f8f5e9"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
         <TextView
             android:id="@+id/txt_alrlogin"
@@ -108,7 +111,7 @@
         android:id="@+id/tvPictureClick"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="@font/fjord_one"
         android:gravity="center"
         android:shadowColor="#E6E6E6"
