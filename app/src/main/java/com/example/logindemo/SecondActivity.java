@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, coupon, aboutus, viewRec;
+    private Button clickProfile, Logout, coupon, aboutus, viewRec,cardetails;
     private String name;
     private TextView contactus, name2;
     private FirebaseAuth firebaseAuth;
@@ -36,6 +36,7 @@ public class SecondActivity extends AppCompatActivity {
         contactus = findViewById(R.id.tvContactUs);
         viewRec = findViewById(R.id.btnViewReceipt);
         name2 = findViewById(R.id.tvNameD);
+        cardetails = findViewById(R.id.btnCarDetail);
 
         firebaseAuth = FirebaseAuth.getInstance();
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
@@ -103,6 +104,13 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, ViewReceipt.class));
+            }
+        });
+
+        cardetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this, BookingForm.class));
             }
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////

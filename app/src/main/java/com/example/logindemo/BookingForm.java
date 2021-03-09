@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -74,7 +75,9 @@ public class BookingForm extends AppCompatActivity {
                 bformInfo.setCarplate(carplate);
                 reference3.setValue(bformInfo);
 
-                startActivity(new Intent(BookingForm.this, ViewReceipt.class));
+                Toast.makeText(BookingForm.this, "Car Details Updated", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(BookingForm.this, SecondActivity.class));
             }
         });
     }

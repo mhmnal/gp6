@@ -8,19 +8,22 @@
     android:focusableInTouchMode="false"
     tools:context=".RegistrationActivity">
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView"
         android:layout_width="300dp"
         android:layout_height="500dp"
         android:hapticFeedbackEnabled="true"
-        app:cardBackgroundColor="@color/white_primary"
-        app:cardCornerRadius="30sp"
+        app:neumorph_backgroundColor="@color/white_primary"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869">
+        app:layout_constraintVertical_bias="0.869"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shadowColorLight="#1e3d59">
 
         <EditText
             android:id="@+id/et_username"
@@ -68,9 +71,9 @@
 
         <soup.neumorphism.NeumorphButton
             android:id="@+id/btn_register"
-            android:layout_width="150dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="125dp"
+            android:layout_width="210dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="240dp"
             android:background="@color/white_primary"
             android:fontFamily="@font/fjord_one"
@@ -78,8 +81,9 @@
             android:textColor="@color/dark_blue"
             android:textStyle="bold"
             app:neumorph_lightSource="leftTop"
-            app:neumorph_shadowColorDark="#ddd8ca"
-            app:neumorph_shadowColorLight="#f8f5e9"
+            app:neumorph_shadowColorDark="#aca89d"
+            app:neumorph_shadowColorLight="#f7f3e6"
+            app:neumorph_shadowElevation="6dp"
             app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
 
         <TextView
@@ -87,14 +91,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="430dp"
             android:fontFamily="@font/fjord_one"
             android:text="Login"
             android:textColor="@color/dark_blue"
             android:textSize="18sp" />
 
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
     <ImageView
         android:id="@+id/ivProfilePic"

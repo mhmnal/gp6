@@ -7,21 +7,24 @@
     android:background="@drawable/dashboard1"
     tools:context=".ContactUs">
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView6"
         android:layout_width="200dp"
-        android:layout_height="350dp"
+        android:layout_height="400dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="228dp"
         android:hapticFeedbackEnabled="true"
-        app:cardBackgroundColor="@color/white_primary"
-        app:cardCornerRadius="10sp"
+        app:neumorph_backgroundColor="@color/white_primary"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shadowColorLight="#1e3d59">
 
         <TextView
             android:id="@+id/textView12"
@@ -32,6 +35,7 @@
             android:fontFamily="@font/fjord_one"
             android:gravity="center_horizontal"
             android:text="ABDUL MUHAIMIN"
+            android:textStyle="bold"
             android:textColor="@color/dark_blue"
             android:textSize="16sp" />
 
@@ -67,6 +71,7 @@
             android:fontFamily="@font/fjord_one"
             android:gravity="center_horizontal"
             android:text="FAREES NAZMI"
+            android:textStyle="bold"
             android:textColor="@color/dark_blue"
             android:textSize="16sp" />
 
@@ -102,6 +107,7 @@
             android:fontFamily="@font/fjord_one"
             android:gravity="center_horizontal"
             android:text="CHE ARIF"
+            android:textStyle="bold"
             android:textColor="@color/dark_blue"
             android:textSize="16sp" />
 
@@ -137,6 +143,7 @@
             android:fontFamily="@font/fjord_one"
             android:gravity="center_horizontal"
             android:text="ARIF HAFIZUDDIN"
+            android:textStyle="bold"
             android:textColor="@color/dark_blue"
             android:textSize="16sp" />
 
@@ -163,7 +170,7 @@
             android:textColor="@color/dark_blue"
             android:textSize="15sp" />
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
     <TextView
         android:id="@+id/textView9"
@@ -180,7 +187,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.157" />
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView7"
         android:layout_width="100dp"
         android:layout_height="230dp"
@@ -191,8 +198,11 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="228dp"
         android:hapticFeedbackEnabled="true"
-        app:cardBackgroundColor="@color/white_primary"
-        app:cardCornerRadius="10sp"
+        app:neumorph_backgroundColor="@color/white_primary"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shadowColorLight="#1e3d59"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -214,20 +224,22 @@
             android:layout_width="113dp"
             android:layout_height="101dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="100dp"
             app:srcCompat="@drawable/twitter" />
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
-    <androidx.cardview.widget.CardView
+    <soup.neumorphism.NeumorphCardView
         android:layout_width="100dp"
-        android:layout_height="230dp"
-
+        android:layout_height="260dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
         android:hapticFeedbackEnabled="true"
-        app:cardBackgroundColor="@color/white_primary"
-        app:cardCornerRadius="10sp"
+        app:neumorph_backgroundColor="@color/white_primary"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shadowColorLight="#1e3d59"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -246,5 +258,5 @@
             android:textSize="20sp" />
 
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

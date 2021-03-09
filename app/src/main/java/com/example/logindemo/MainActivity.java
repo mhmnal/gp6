@@ -83,19 +83,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    progressDialog.dismiss();
                     //Toast.makeText(MainActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
                     checkEmailVerification();
                 } else {
                     Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    counter--;
-                    Info.setText("Attempts: " + counter);
-                    progressDialog.dismiss();
-                    if (counter == 0) {
-                        Login.setEnabled(false);
+
                     }
                 }
-            }
+
         });
 
     }

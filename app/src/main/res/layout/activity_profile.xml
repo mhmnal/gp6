@@ -25,7 +25,7 @@
         android:layout_height="400dp"
         android:hapticFeedbackEnabled="true"
         app:neumorph_backgroundColor="@color/dark_blue"
-        app:cardCornerRadius="30sp"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.901"
         app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f8f5e9" >
+        app:neumorph_shadowColorLight="#f5f0e0" >
 
 
         <TextView

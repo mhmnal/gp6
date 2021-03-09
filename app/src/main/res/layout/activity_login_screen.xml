@@ -8,13 +8,12 @@
     tools:context=".LoginScreen">
 
 
-    <Button
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/btnLoginScr"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btnbg1"
-        android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="LOGIN"
         android:textColor="@color/white_primary"
@@ -25,18 +24,23 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegisterScr"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#152b3e"
+        app:neumorph_shadowColorLight="#35506a"
+        app:neumorph_shadowElevation="6dp" />
+    />
 
-    <Button
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/btnRegisterScr"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="68dp"
-        android:background="@drawable/btnbg3"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        app:neumorph_backgroundColor="@color/red2"
         android:elevation="6dp"
         android:fontFamily="@font/fjord_one"
         android:text="REGISTER"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,14 +48,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#1b3750"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+        app:neumorph_shadowColorLight="#1e3d59"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="45sp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginEnd="30dp"
         android:fontFamily="@font/sakurata"
         android:gravity="center_horizontal|center_vertical"
         android:text="SMART"
@@ -63,7 +70,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/textView3"
@@ -76,8 +83,8 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.073" />
 </androidx.constraintlayout.widget.ConstraintLayout>

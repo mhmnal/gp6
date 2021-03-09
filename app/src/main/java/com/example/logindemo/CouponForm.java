@@ -15,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.timepicker.TimeFormat;
 import com.google.firebase.auth.FirebaseAuth;
@@ -106,7 +107,8 @@ public class CouponForm extends AppCompatActivity implements
                 couponInfo.setTimeOfDay(cTime);
                 couponInfo.setHourss(clickedJamList);
                 reference.setValue(couponInfo);
-                startActivity(new Intent(CouponForm.this, BookingForm.class));
+                Toast.makeText(CouponForm.this, "Coupon Booked", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(CouponForm.this, SecondActivity.class));
             }
         });
     }
@@ -123,6 +125,14 @@ public class CouponForm extends AppCompatActivity implements
         mJamList.add(new spinItem("6"));
         mJamList.add(new spinItem("7"));
         mJamList.add(new spinItem("8"));
+        mJamList.add(new spinItem("9"));
+        mJamList.add(new spinItem("10"));
+        mJamList.add(new spinItem("11"));
+        mJamList.add(new spinItem("12"));
+        mJamList.add(new spinItem("13"));
+        mJamList.add(new spinItem("14"));
+        mJamList.add(new spinItem("15"));
+        mJamList.add(new spinItem("16"));
 
     }
 

@@ -8,18 +8,22 @@
     android:background="@drawable/dashboard8"
     tools:context=".MainActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
         android:hapticFeedbackEnabled="true"
-        app:cardBackgroundColor="@color/dark_blue"
-        app:cardCornerRadius="30sp"
+        app:neumorph_backgroundColor="@color/dark_blue"
+        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752">
+        app:layout_constraintVertical_bias="0.752"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="#aca89d"
+        app:neumorph_shadowColorLight="#f7f3e6"
+        app:neumorph_shadowElevation="6dp">
 
         <EditText
             android:id="@+id/txt_name"
@@ -34,7 +38,8 @@
             android:padding="10sp"
             android:textColor="@color/dark_blue"
             android:textColorHighlight="@color/dark_blue"
-            android:textColorHint="@color/dark_blue" />
+            android:textColorHint="@color/dark_blue"
+            android:textColorLink="@color/dark_blue" />
 
         <EditText
             android:id="@+id/txt_Password"
@@ -47,25 +52,27 @@
             android:fontFamily="@font/fjord_one"
             android:hint="Password"
             android:padding="10sp"
-            android:password="true"
+            android:inputType="textPassword"
             android:textColor="@color/dark_blue"
             android:textColorHighlight="@color/dark_blue"
-            android:textColorHint="@color/dark_blue" />
+            android:textColorHint="@color/dark_blue"
+            android:textColorLink="@color/dark_blue"/>
 
         <soup.neumorphism.NeumorphButton
             android:id="@+id/btn_login"
             app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-            android:layout_width="150dp"
-            android:layout_height="65dp"
-            android:layout_marginLeft="125dp"
+            android:layout_width="210dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="90dp"
             android:layout_marginTop="170dp"
             android:background="@color/dark_blue"
             android:fontFamily="@font/fjord_one"
             android:text="LOGIN"
+            app:neumorph_shadowElevation="6dp"
             android:textColor="@color/white_primary"
             android:textStyle="bold"
             app:neumorph_lightSource="leftTop"
-            app:neumorph_shadowColorDark="#1b3750"
+            app:neumorph_shadowColorDark="#152b3e"
             app:neumorph_shadowColorLight="#35506a"/>
 
         <TextView
@@ -92,7 +99,7 @@
             android:textSize="14sp" />
 
 
-    </androidx.cardview.widget.CardView>
+    </soup.neumorphism.NeumorphCardView>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/anim"

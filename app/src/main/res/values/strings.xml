@@ -15,6 +15,21 @@
         <item>12 Hours</item>
 
     </string-array>
+
+    <string name="onboard1">BOOK A PARKING SPACE WITH EASE</string>
+    <string name="ponborad1">Rushing to go somewhere?No worries!, with just a click of a button, you can resolve the parking issues in no time</string>
+
+    <string name="onboard2">CUSTOMIZE YOUR OWN PROFILE</string>
+    <string name="ponborad2">Personalize yourself with your own profile page!</string>
+
+    <string name="onboard3">SIT BACK AND ENJOY</string>
+    <string name="ponborad3">Sit back and enjoy your time while our app do all the payments for you.</string>
+
+    <!--BUTTONS-->
+    <string name="skip">SKIP</string>
+    <string name="next">NEXT</string>
+    <string name="Start">Lets get started!</string>
+
 </resources>
 
 

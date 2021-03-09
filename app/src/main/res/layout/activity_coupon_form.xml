@@ -24,8 +24,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
         app:layout_constraintVertical_bias="0.0"
         app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f8f5e9">
+        app:neumorph_shadowColorDark="#aca89d"
+        app:neumorph_shadowColorLight="#f7f3e6"
+        app:neumorph_shadowElevation="6dp">
 
         <TextView
             android:layout_width="150dp"
@@ -82,8 +83,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView5"
         app:layout_constraintVertical_bias="0.0"
         app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f8f5e9">
+        app:neumorph_shadowColorDark="#aca89d"
+        app:neumorph_shadowColorLight="#f7f3e6"
+        app:neumorph_shadowElevation="6dp">
 
         <TextView
             android:layout_width="150dp"
@@ -118,7 +120,6 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/btnbg1"
         android:fontFamily="@font/fjord_one"
-        android:shadowColor="#FFFFFF"
         android:text="Confirm"
         android:textColor="@color/white_primary"
         android:textColorHighlight="#F5F0E1"
@@ -130,8 +131,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView4"
         app:layout_constraintVertical_bias="0.646"
         app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#1b3750"
-        app:neumorph_shadowColorLight="#35506a" />
+        app:neumorph_shadowColorDark="#152b3e"
+        app:neumorph_shadowColorLight="#35506a"
+        app:neumorph_shadowElevation="6dp" />
 
     <soup.neumorphism.NeumorphCardView
         android:id="@+id/cardView5"
@@ -148,8 +150,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.288"
         app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f8f5e9">
+        app:neumorph_shadowColorDark="#aca89d"
+        app:neumorph_shadowColorLight="#f7f3e6"
+        app:neumorph_shadowElevation="6dp" >
 
         <TextView
             android:layout_width="150dp"

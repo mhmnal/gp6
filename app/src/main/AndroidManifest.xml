@@ -13,18 +13,24 @@
         android:roundIcon="@mipmap/park"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDemo">
-        <activity android:name=".CouponForm"
+        <activity android:name=".onboarding"></activity>
+        <activity
+            android:name=".CouponForm"
             android:screenOrientation="portrait" />
         <activity
             android:name=".BookingForm"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViewReceipt"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ContactUs"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AboutUs"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".splashScreen"
+        <activity
+            android:name=".ViewReceipt"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContactUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginScreen"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UpdatePassword"
             android:screenOrientation="portrait" />

@@ -96,8 +96,8 @@
             android:textColor="@color/dark_blue"
             android:textStyle="bold"
             app:neumorph_lightSource="leftTop"
-            app:neumorph_shadowColorDark="#ddd8ca"
-            app:neumorph_shadowColorLight="#f8f5e9"/>
+            app:neumorph_shadowColorDark="#aca89d"
+            app:neumorph_shadowColorLight="#f7f3e6"/>
 
 
     </androidx.cardview.widget.CardView>
