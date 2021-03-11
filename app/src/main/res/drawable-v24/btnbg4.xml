@@ -4,8 +4,9 @@
     <!-- White Top color -->
     <item android:bottom="3px" android:right="3px">
         <shape android:shape="rectangle">
-            <corners android:radius="5dp" />
-            <solid android:color="#1E3D59" />
+            <corners android:topRightRadius="10sp"
+                android:topLeftRadius="10sp"/>
+            <solid android:color="@color/white_primary" />
         </shape>
     </item>
 </layer-list>

@@ -2,6 +2,7 @@ package com.example.logindemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.widget.Button;
 import android.content.Intent;
@@ -17,10 +18,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class SecondActivity extends AppCompatActivity {
 
-    private Button clickProfile, Logout, coupon, aboutus, viewRec,cardetails;
+    private Button Logout;
     private String name;
+    private CardView clickProfile,  coupon, aboutus, viewRec,cardetails;
     private TextView contactus, name2;
     private FirebaseAuth firebaseAuth;
 

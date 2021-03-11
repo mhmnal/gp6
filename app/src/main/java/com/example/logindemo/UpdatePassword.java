@@ -16,7 +16,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Pattern;
+
 public class UpdatePassword extends AppCompatActivity {
+
+    private static final Pattern PASSWORD_PATTERN =
+            Pattern.compile("^" +
+                    "(?=.*[0-9])" +         //at least 1 digit
+                    "(?=.*[a-z])" +         //at least 1 lower case letter
+                    "(?=.*[A-Z])" +         //at least 1 upper case letter
+                    //"(?=.*[a-zA-Z])" +      //any letter
+                    "(?=\\S+$)" +           //no white spaces
+                    ".{8,}" +               //at least 4 characters
+                    "$");
 
     private Button update;
     private EditText newPassword;
@@ -40,7 +52,7 @@ public class UpdatePassword extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(validatePassword()){
                 String userPasswordNew = newPassword.getText().toString();
                 firebaseUser.updatePassword(userPasswordNew).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -54,7 +66,7 @@ public class UpdatePassword extends AppCompatActivity {
                         }
                     }
                 });
-            }
+            }}
         });
 
     }
@@ -66,5 +78,19 @@ public class UpdatePassword extends AppCompatActivity {
                 onBackPressed();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean validatePassword(){
+        String passwordInput = newPassword.getEditableText().toString().trim();
+
+        if(!PASSWORD_PATTERN.matcher(passwordInput).matches()){
+            newPassword.setError("Password too weak");
+            return false;
+
+        }else {
+
+            newPassword.setError(null);
+            return true;
+        }
     }
 }

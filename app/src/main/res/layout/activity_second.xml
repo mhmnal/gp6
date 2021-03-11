@@ -5,114 +5,74 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/design22"
-    tools:context=".SecondActivity">
+    tools:context=".SecondActivity"
+    android:background="@drawable/design22">
 
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnCoupon"
-        android:layout_width="157dp"
-        android:layout_height="80dp"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/fjord_one"
-        android:text="Coupon"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnMyProfile"
+        android:layout_width="130dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewReceipt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f6f2e3"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
-
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnCarDetail"
-        android:layout_width="157dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="20dp"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/fjord_one"
-        android:text="Car Details"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnMyProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f6f2e3"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+        app:cardBackgroundColor="@color/red2">
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnAboutUs"
-        android:layout_width="157dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="20dp"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/fjord_one"
-        android:text="About Us"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCoupon"
-        app:layout_constraintVertical_bias="0.092"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f6f2e3"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnViewReceipt"
-        android:layout_width="157dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="20dp"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/fjord_one"
-        android:text="Receipt"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMyProfile"
-        app:layout_constraintVertical_bias="0.098"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f6f2e3"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+            <ImageView
+                android:id="@+id/ig4"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:src="@drawable/profile" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_below="@+id/ig4"
+                android:layout_marginTop="-2dp"
+                android:fontFamily="@font/fjord_one"
+                android:gravity="center"
+                android:text="PROFILE"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnLogout"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/btnbg3"
-        android:elevation="@dimen/_6sdp"
         android:fontFamily="@font/fjord_one"
         android:text="LOGOUT"
         android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCoupon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvContactUs"
@@ -126,59 +86,215 @@
         app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintVertical_bias="0.945" />
 
     <TextView
         android:id="@+id/tvNameD"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/fjord_one"
         android:gravity="center_horizontal|center_vertical"
         android:textColor="@color/black"
-        android:textSize="39sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="53dp"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sakurata"
         android:text="WELCOME"
         android:textColor="@color/black"
-        android:textSize="35dp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.032" />
 
-    <soup.neumorphism.NeumorphButton
-        android:id="@+id/btnMyProfile"
-        android:layout_width="157dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="38dp"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/fjord_one"
-        android:text="Profile"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnCoupon"
+        android:layout_width="130dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/red2"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAboutUs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintEnd_toStartOf="@+id/btnMyProfile"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f6f2e3"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+        app:layout_constraintVertical_bias="1.0">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ig1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:src="@drawable/coupon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ig1"
+                android:fontFamily="@font/fjord_one"
+                android:gravity="center"
+                android:text="COUPON"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnAboutUs"
+        android:layout_width="130dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:cardBackgroundColor="@color/red2"
+        app:cardCornerRadius="10sp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ig2"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:src="@drawable/aboutus" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ig2"
+                android:fontFamily="@font/fjord_one"
+                android:gravity="center"
+                android:text="ABOUT US"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnViewReceipt"
+        android:layout_width="130dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="90dp"
+        app:cardCornerRadius="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:cardBackgroundColor="@color/red2">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ig3"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:padding="10dp"
+                android:src="@drawable/receipt" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_below="@+id/ig3"
+                android:layout_marginTop="-2dp"
+                android:fontFamily="@font/fjord_one"
+                android:gravity="center"
+                android:text="RECEIPT"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnCarDetail"
+        android:layout_width="130dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMyProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:cardBackgroundColor="@color/red2"
+        app:cardCornerRadius="10sp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ig5"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@drawable/car" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_below="@+id/ig5"
+                android:layout_marginTop="-2dp"
+                android:fontFamily="@font/fjord_one"
+                android:gravity="center"
+                android:text="CAR DETAILS"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:paddingHorizontal="5dp"/>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

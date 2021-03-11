@@ -10,7 +10,7 @@ import android.view.WindowManager;
 
 public class splashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIMER = 1500;
+    private static int SPLASH_TIMER = 500;
 
     SharedPreferences  onBoardingScreen;
 
@@ -23,24 +23,9 @@ public class splashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                onBoardingScreen = getSharedPreferences("onBoardingScreen",MODE_PRIVATE);
-
-                boolean isFirst = onBoardingScreen.getBoolean("firstTime", true);
-
-                if(isFirst){
-
-                    SharedPreferences.Editor editor = onBoardingScreen.edit();
-                    editor.putBoolean("firstTime",false);
-                    editor.commit();
-                    Intent intent = new Intent(splashScreen.this, onboarding.class);
-                    startActivity(intent);
-                    finish();
-                }else{
-                    Intent intent = new Intent(splashScreen.this, LoginScreen.class);
-                    startActivity(intent);
-                    finish();
-                }
-
+                Intent intent = new Intent(splashScreen.this, LoginScreen.class);
+                startActivity(intent);
+                finish();
 
             }
         }, SPLASH_TIMER);

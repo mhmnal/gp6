@@ -2,8 +2,8 @@
 <resources>
     <style name="CustomShapeAppearance">
         <item name="neumorph_cornerFamily">rounded</item>
-        <item name="neumorph_cornerSize">10dp</item>
-        <item name="neumorph_cornerSizeTopLeft">10dp</item>
-        <item name="neumorph_cornerSizeTopRight">10dp</item>
+        <item name="neumorph_cornerSize">5dp</item>
+        <item name="neumorph_cornerSizeTopLeft">5dp</item>
+        <item name="neumorph_cornerSizeTopRight">5dp</item>
     </style>
 </resources>

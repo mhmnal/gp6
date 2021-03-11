@@ -6,25 +6,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class AboutUs extends AppCompatActivity {
+public class aboutus2 extends AppCompatActivity {
 
-    private Button members;
+    private Button gtD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_aboutus2);
 
-        members = findViewById(R.id.aboutus2);
+        gtD = findViewById(R.id.dash2);
 
-        members.setOnClickListener(new View.OnClickListener() {
+
+        gtD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AboutUs.this, aboutus2.class));
+                startActivity(new Intent(aboutus2.this,SecondActivity.class));
             }
         });
-
     }
 }

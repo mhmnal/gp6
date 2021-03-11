@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -35,8 +36,19 @@ import com.google.firebase.storage.UploadTask;
 
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 public class RegistrationActivity extends AppCompatActivity {
+
+    private static final Pattern PASSWORD_PATTERN =
+            Pattern.compile("^" +
+                    "(?=.*[0-9])" +         //at least 1 digit
+                    "(?=.*[a-z])" +         //at least 1 lower case letter
+                    "(?=.*[A-Z])" +         //at least 1 upper case letter
+                    //"(?=.*[a-zA-Z])" +      //any letter
+                    "(?=\\S+$)" +           //no white spaces
+                    ".{8,}" +               //at least 4 characters
+                    "$");
 
     //Variables////////////////////////////////////////////////////////////////////
     private EditText userName, userPassword, userEmail;
@@ -98,7 +110,7 @@ public class RegistrationActivity extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validate()) {
+                if (validate() &&  validatePassword()) {
                     //Upload data to database
                     String user_email = userEmail.getText().toString().trim();
                     String user_password = userPassword.getText().toString().trim();
@@ -107,6 +119,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
                             if (task.isSuccessful()) {
                                 sendEmailVerification();
                             } else {
@@ -206,4 +219,18 @@ public class RegistrationActivity extends AppCompatActivity {
         myRef.setValue(userProfile);
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private boolean validatePassword(){
+            String passwordInput = userPassword.getEditableText().toString().trim();
+
+        if(!PASSWORD_PATTERN.matcher(passwordInput).matches()){
+            userPassword.setError("Password too weak");
+            return false;
+
+        }else {
+
+            userPassword.setError(null);
+            return true;
+        }
+    }
 }

@@ -8,24 +8,21 @@
     tools:context=".ViewReceipt">
 
 
-    <soup.neumorphism.NeumorphButton
+    <Button
         android:id="@+id/tvBDashboard"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        app:neumorph_backgroundColor="@color/red2"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btnbg3"
         android:fontFamily="@font/fjord_one"
         android:text="DASHBOARD"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893"
-        app:neumorph_shadowColorLight="#1e3d59"
-        app:neumorph_shadowColorDark="#1b3750"/>
+        app:layout_constraintTop_toBottomOf="@+id/cardView10"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView25"
@@ -160,18 +157,19 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView10"
         android:layout_width="320sp"
         android:layout_height="250sp"
         android:layout_marginTop="35dp"
         android:foregroundGravity="center"
+        app:cardBackgroundColor="#ffff"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.0"
-        app:cardBackgroundColor="#ffff">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:layout_width="250dp"
@@ -190,8 +188,8 @@
             android:layout_marginTop="55sp"
             android:fontFamily="@font/fjord_one"
             android:text="PHONE NUMBER"
-            android:textSize="17sp"
             android:textColor="@color/black"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -202,8 +200,8 @@
             android:layout_marginTop="80sp"
             android:fontFamily="@font/fjord_one"
             android:text="Phone Number"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="150dp"
@@ -224,8 +222,8 @@
             android:layout_marginTop="140sp"
             android:fontFamily="@font/fjord_one"
             android:text="Car Brand"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="150dp"
@@ -234,8 +232,8 @@
             android:layout_marginTop="55sp"
             android:fontFamily="@font/fjord_one"
             android:text="CAR PLATE"
-            android:textSize="17sp"
             android:textColor="@color/black"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -246,8 +244,8 @@
             android:layout_marginTop="80sp"
             android:fontFamily="@font/fjord_one"
             android:text="Car Plate"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="150dp"
@@ -256,8 +254,8 @@
             android:layout_marginTop="115sp"
             android:fontFamily="@font/fjord_one"
             android:text="CAR MODEL"
-            android:textSize="17sp"
             android:textColor="@color/black"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -266,10 +264,10 @@
             android:layout_height="20dp"
             android:layout_marginLeft="170sp"
             android:layout_marginTop="140sp"
-            android:textSize="16sp"
             android:fontFamily="@font/fjord_one"
             android:text="Car Model"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="150dp"
@@ -278,8 +276,8 @@
             android:layout_marginTop="175sp"
             android:fontFamily="@font/fjord_one"
             android:text="CAR COLOR"
-            android:textSize="17sp"
             android:textColor="@color/black"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -290,9 +288,25 @@
             android:layout_marginTop="200sp"
             android:fontFamily="@font/fjord_one"
             android:text="Car Color"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:fontFamily="@font/fjord_one"
+        android:text="Write feedback to us!"
+        android:textColor="@color/white_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBDashboard"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

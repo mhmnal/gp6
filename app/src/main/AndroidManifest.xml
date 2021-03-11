@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/park"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDemo">
-        <activity android:name=".onboarding"></activity>
+        <activity android:name=".WriteFeedback"></activity>
+        <activity android:name=".aboutus2" />
         <activity
             android:name=".CouponForm"
             android:screenOrientation="portrait" />

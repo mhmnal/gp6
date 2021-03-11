@@ -27,7 +27,7 @@
         android:layout_height="400dp"
         android:hapticFeedbackEnabled="true"
         app:cardBackgroundColor="@color/white_primary"
-        app:cardCornerRadius="30sp"
+        app:cardCornerRadius="5sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -83,21 +83,18 @@
             android:textColor="@color/dark_blue"
             android:textSize="20sp" />
 
-        <soup.neumorphism.NeumorphButton
+        <Button
             android:id="@+id/btnSave"
-            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="75dp"
             android:layout_marginTop="280dp"
-            android:background="@drawable/btnbg2"
+            android:background="@drawable/btnbg3"
             android:fontFamily="@font/fjord_one"
             android:text="Update"
             android:textColor="@color/dark_blue"
             android:textStyle="bold"
-            app:neumorph_lightSource="leftTop"
-            app:neumorph_shadowColorDark="#aca89d"
-            app:neumorph_shadowColorLight="#f7f3e6"/>
+           />
 
 
     </androidx.cardview.widget.CardView>

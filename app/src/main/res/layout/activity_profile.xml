@@ -20,20 +20,18 @@
         app:layout_constraintVertical_bias="0.161"
         app:srcCompat="@mipmap/camera" />
 
-    <soup.neumorphism.NeumorphCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="400dp"
         android:hapticFeedbackEnabled="true"
-        app:neumorph_backgroundColor="@color/dark_blue"
-        app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+        app:cardBackgroundColor="@color/dark_blue"
+        app:cardCornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901"
-        app:neumorph_shadowColorDark="#ddd8ca"
-        app:neumorph_shadowColorLight="#f5f0e0" >
+        app:layout_constraintVertical_bias="0.901">
 
 
         <TextView
@@ -42,7 +40,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20sp"
-            android:fontFamily="@font/carnivales"
+            android:fontFamily="@font/fjord_one"
             android:text="Name"
             android:textColor="@color/white_primary"
             android:textSize="40sp" />
@@ -50,7 +48,7 @@
         <TextView
             android:id="@+id/tvProfileName2"
             android:layout_width="250dp"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="75sp"
             android:fontFamily="@font/fjord_one"
@@ -64,7 +62,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="125sp"
-            android:fontFamily="@font/carnivales"
+            android:fontFamily="@font/fjord_one"
             android:text="Email"
             android:textColor="@color/white_primary"
             android:textSize="40sp" />
@@ -72,7 +70,7 @@
         <TextView
             android:id="@+id/tvProfileEmail2"
             android:layout_width="250dp"
-            android:layout_height="25dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="180sp"
             android:fontFamily="@font/fjord_one"
@@ -80,40 +78,30 @@
             android:textColor="@color/white_primary"
             android:textSize="20sp" />
 
-        <soup.neumorphism.NeumorphButton
+        <Button
             android:id="@+id/btnProfileUpdate"
-            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-            android:layout_width="210dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="220dp"
-            android:background="@color/dark_blue"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="230dp"
+            android:background="@drawable/btnbg3"
             android:fontFamily="@font/fjord_one"
             android:text="EDIT"
-            android:textColor="@color/white_primary"
-            android:textStyle="bold"
-            app:neumorph_lightSource="leftTop"
-            app:neumorph_shadowColorDark="#1b3750"
-            app:neumorph_shadowColorLight="#35506a" />
+            android:textColor="@color/black" />
 
-        <soup.neumorphism.NeumorphButton
+        <Button
             android:id="@+id/btnChangePassword"
-            app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
-            android:layout_width="210dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="65dp"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="85dp"
             android:layout_marginTop="300dp"
-            android:background="@color/dark_blue"
+            android:background="@drawable/btnbg2"
             android:fontFamily="@font/fjord_one"
             android:text="CHANGE PASSWORD"
-            android:textColor="@color/white_primary"
-            android:textStyle="bold"
-            app:neumorph_lightSource="leftTop"
-            app:neumorph_shadowColorDark="#1b3750"
-            app:neumorph_shadowColorLight="#35506a" />
+            android:textColor="@color/dark_blue" />
 
 
-    </soup.neumorphism.NeumorphCardView>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvProfileH"

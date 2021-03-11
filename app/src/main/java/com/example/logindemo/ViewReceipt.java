@@ -22,7 +22,7 @@ import java.text.DecimalFormat;
 
 public class ViewReceipt extends AppCompatActivity {
 
-    private TextView price, receiptDate, receiptTime, receiptHours, receiptPn, receiptCb, receiptCm, receiptCc, receiptCp;
+    private TextView price, receiptDate, receiptTime, receiptHours, receiptPn, receiptCb, receiptCm, receiptCc, receiptCp,feedback;
     private Button bDasboard;
     private FirebaseAuth firebaseAuth;
     String name;
@@ -42,6 +42,7 @@ public class ViewReceipt extends AppCompatActivity {
         receiptCp = findViewById(R.id.tvCPlate);
         bDasboard = findViewById(R.id.tvBDashboard);
         price = findViewById(R.id.tvPrice);
+        feedback = findViewById(R.id.feedback);
 
         firebaseAuth = FirebaseAuth.getInstance();
         DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
@@ -111,6 +112,13 @@ public class ViewReceipt extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ViewReceipt.this, SecondActivity.class));
+            }
+        });
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ViewReceipt.this, WriteFeedback.class));
             }
         });
     }
