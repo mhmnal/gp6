@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     android:layout_height="match_parent"
     tools:context=".BookingForm">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="320dp"
-        android:layout_height="640dp"
+        android:layout_height="780dp"
         app:cardBackgroundColor="@color/white_primary"
         app:cardCornerRadius="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,44 +20,107 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.326">
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/carnivales"
-            android:text="CAR DETAILS"
+            android:fontFamily="@font/romonolight"
             android:paddingHorizontal="12dp"
+            android:text="CAR DETAILS"
             android:textColor="@color/dark_blue"
-            android:textSize="45sp"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="120dp"
+            android:fontFamily="@font/romonolight"
+            android:text="Car Brand"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/spinnerCarBrand"
+            android:layout_width="156dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="150sp"
+            android:background="@drawable/btnbg1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/romonolight"
+            android:text="Click button above"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:fontFamily="@font/romonolight"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="530dp"
+            android:layout_marginLeft="35dp"
             android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/etPhoneNumber"
-            android:layout_width="250dp"
+            android:layout_width="255dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="120sp"
+            android:layout_marginTop="560dp"
+            android:layout_marginLeft="35dp"
             android:background="@drawable/btnbg1"
-            android:inputType="number"
             android:fontFamily="@font/fjord_one"
-            android:hint="Phone Number"
+            android:hint="Eg: 01111334253"
+            android:inputType="number"
             android:padding="10sp"
             android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColorHint="@color/white_primary70op" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="230dp"
+            android:fontFamily="@font/romonolight"
+            android:text="Car Plate"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <EditText
-            android:id="@+id/etCarBrand"
+            android:layout_marginTop="260dp"
+            android:id="@+id/etCarPlate"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="200dp"
             android:background="@drawable/btnbg1"
             android:fontFamily="@font/fjord_one"
-            android:hint="Car Brand"
+            android:hint="Eg: WTJ4773"
             android:padding="10sp"
             android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
+            android:textColorHint="@color/white_primary70op" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car Model"
+            android:fontFamily="@font/romonolight"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="35dp"
+            android:textStyle="bold"/>
 
 
         <EditText
@@ -65,53 +128,67 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="360dp"
             android:background="@drawable/btnbg1"
             android:fontFamily="@font/fjord_one"
-            android:hint="Car Model"
+            android:hint="Eg: Prius"
             android:padding="10sp"
             android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary"/>
+            android:textColorHint="@color/white_primary70op" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car Color"
+            android:fontFamily="@font/romonolight"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="430dp"
+            android:layout_marginLeft="35dp"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/etCarColor"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="460dp"
             android:background="@drawable/btnbg1"
             android:fontFamily="@font/fjord_one"
-            android:hint="Car Color"
+            android:hint="Eg: Black"
             android:padding="10sp"
             android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary"/>
+            android:textColorHint="@color/white_primary70op" />
 
-        <EditText
-            android:id="@+id/etCarPlate"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="440dp"
-            android:background="@drawable/btnbg1"
-            android:fontFamily="@font/fjord_one"
-            android:hint="Car Plate"
-            android:padding="10sp"
-            android:textColor="@color/white_primary"
-            android:textColorHint="@color/white_primary" />
 
         <Button
             android:id="@+id/btnBConfirm"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginLeft="90dp"
-            android:layout_marginTop="530dp"
-            android:textSize="17sp"
+            android:layout_marginTop="630dp"
             android:background="@drawable/btnbg3"
             android:fontFamily="@font/fjord_one"
             android:text="CONFIRM"
             android:textColor="@color/black"
-            />
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/backbookingform"
+          android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="700dp"
+        android:background="@drawable/btnbg1"
+        android:fontFamily="@font/fjord_one"
+        android:text="BACK"
+        android:textColor="@color/white_primary"
+        android:textSize="20sp"/>
+
 
 
     </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

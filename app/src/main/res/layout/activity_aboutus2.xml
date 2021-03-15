@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     tools:context=".aboutus2">
 
 
@@ -171,8 +171,8 @@
         android:background="@drawable/btnbg3"
         android:fontFamily="@font/fjord_one"
         android:text="Dashboard"
-        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.943"

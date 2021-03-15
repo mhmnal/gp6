@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     private EditText passwordEmail;
-    private Button resetPassword;
+    private Button resetPassword,back;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -28,6 +28,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         passwordEmail = (EditText) findViewById(R.id.tv_fgEmail);
         resetPassword = (Button) findViewById(R.id.btn_fgConfirm);
         firebaseAuth = FirebaseAuth.getInstance();
+        back = findViewById(R.id.backforgotpassword);
 
 
         resetPassword.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ForgotPasswordActivity.this, SecondActivity.class));
+            }
+        });
+
 
     }
 }

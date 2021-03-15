@@ -20,7 +20,7 @@ public class WriteFeedback extends AppCompatActivity {
 
     private TextView email,subject;
     private EditText emailtop;
-    private Button send;
+    private Button send,back;
     private ImageButton copy;
 
     @Override
@@ -31,6 +31,7 @@ public class WriteFeedback extends AppCompatActivity {
         emailtop = findViewById(R.id.wrEmail);
         send = findViewById(R.id.btnSend);
         copy = findViewById(R.id.ibCopy);
+        back = findViewById(R.id.backwritefeedback);
 
 
         send.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +51,14 @@ public class WriteFeedback extends AppCompatActivity {
                 Toast.makeText(WriteFeedback.this, "Copied", Toast.LENGTH_SHORT).show();
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(WriteFeedback.this, SecondActivity.class));
+            }
+        });
+
     }
 
     private void sendMail(){

@@ -4,8 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     tools:context=".ContactUs">
+
+
+    <Button
+        android:id="@+id/backcontactus"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btnbg3"
+        android:fontFamily="@font/fjord_one"
+        android:text="BACK"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
@@ -22,6 +38,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:layout_constraintVertical_bias="0.0">
+
+
 
         <TextView
             android:id="@+id/textView12"
@@ -173,7 +191,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/romonolight"
         android:text="CONTACT US"
         android:textColor="#F5F0E1"
         android:textSize="50sp"

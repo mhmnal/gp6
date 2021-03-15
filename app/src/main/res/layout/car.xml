@@ -2,10 +2,10 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_primary">
+    android:background="@color/dark_blue">
 
     <TextView
-        android:id="@+id/jamxml"
+        android:id="@+id/carxml"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,7 +17,7 @@
         android:fontFamily="@font/fjord_one"
         android:gravity="center"
         android:text="India"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white_primary"
         android:textSize="15sp"
         android:textStyle="bold" />
 

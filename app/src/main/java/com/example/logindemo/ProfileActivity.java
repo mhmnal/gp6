@@ -38,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private ImageView profilePic;
     private TextView profileName, profileAge, profileEmail;
-    private Button profileUpdate, changePassword;
+    private Button profileUpdate, changePassword,back;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
@@ -71,6 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileEmail = findViewById(R.id.tvProfileEmail2);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
         changePassword = findViewById(R.id.btnChangePassword);
+        back = findViewById(R.id.backprofile);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -128,6 +129,14 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, UpdatePassword.class));
             }
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, SecondActivity.class));
+            }
+        });
+
     }
 
 

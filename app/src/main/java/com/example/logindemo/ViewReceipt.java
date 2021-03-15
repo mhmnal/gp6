@@ -32,18 +32,7 @@ public class ViewReceipt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_receipt);
 
-        receiptDate = findViewById(R.id.tvReceiptDate);
-        receiptTime = findViewById(R.id.tvReceiptTime);
-        receiptHours = findViewById(R.id.tvReceiptHours);
-        receiptPn = findViewById(R.id.tvPNumber);
-        receiptCb = findViewById(R.id.tvCBrand);
-        receiptCm = findViewById(R.id.tvcModel);
-        receiptCc = findViewById(R.id.tvCColor);
-        receiptCp = findViewById(R.id.tvCPlate);
-        bDasboard = findViewById(R.id.tvBDashboard);
-        price = findViewById(R.id.tvPrice);
-        feedback = findViewById(R.id.feedback);
-
+       varscall();
         firebaseAuth = FirebaseAuth.getInstance();
         DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
 
@@ -107,7 +96,25 @@ public class ViewReceipt extends AppCompatActivity {
             }
         });
 
+        setOnClick();
+    }
 
+    public void varscall(){
+        receiptDate = findViewById(R.id.tvReceiptDate);
+        receiptTime = findViewById(R.id.tvReceiptTime);
+        receiptHours = findViewById(R.id.tvReceiptHours);
+        receiptPn = findViewById(R.id.tvPNumber);
+        receiptCb = findViewById(R.id.tvCBrand);
+        receiptCm = findViewById(R.id.tvcModel);
+        receiptCc = findViewById(R.id.tvCColor);
+        receiptCp = findViewById(R.id.tvCPlate);
+        bDasboard = findViewById(R.id.tvBDashboard);
+        price = findViewById(R.id.tvPrice);
+        feedback = findViewById(R.id.feedback);
+
+    }
+
+    public void setOnClick(){
         bDasboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

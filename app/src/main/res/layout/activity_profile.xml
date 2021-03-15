@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.161"
-        app:srcCompat="@mipmap/camera" />
+        app:srcCompat="@drawable/photograph" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
@@ -40,10 +40,10 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20sp"
-            android:fontFamily="@font/fjord_one"
+            android:fontFamily="@font/romonolight"
             android:text="Name"
             android:textColor="@color/white_primary"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/tvProfileName2"
@@ -62,10 +62,10 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="125sp"
-            android:fontFamily="@font/fjord_one"
+            android:fontFamily="@font/romonolight"
             android:text="Email"
             android:textColor="@color/white_primary"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/tvProfileEmail2"
@@ -82,7 +82,7 @@
             android:id="@+id/btnProfileUpdate"
             android:layout_width="190dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="85dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="230dp"
             android:background="@drawable/btnbg3"
             android:fontFamily="@font/fjord_one"
@@ -91,13 +91,24 @@
 
         <Button
             android:id="@+id/btnChangePassword"
-            android:layout_width="190dp"
+            android:layout_width="130dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="85dp"
+            android:layout_marginLeft="160dp"
             android:layout_marginTop="300dp"
             android:background="@drawable/btnbg2"
             android:fontFamily="@font/fjord_one"
             android:text="CHANGE PASSWORD"
+            android:textColor="@color/dark_blue" />
+
+        <Button
+            android:id="@+id/backprofile"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/btnbg2"
+            android:fontFamily="@font/fjord_one"
+            android:text="BACK"
             android:textColor="@color/dark_blue" />
 
 
@@ -107,10 +118,11 @@
         android:id="@+id/tvProfileH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/romonolight"
         android:text="PROFILE"
         android:textColor="#1E3D59"
         android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

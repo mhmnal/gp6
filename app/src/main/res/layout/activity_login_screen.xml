@@ -68,7 +68,7 @@
         android:fontFamily="@font/sakurata"
         android:gravity="center_horizontal|center_vertical"
         android:text="P ARKING"
-        android:textColor="#F5F0E1"
+        android:textColor="@color/white_primary"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

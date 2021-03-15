@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard8"
+    android:background="@drawable/design33"
     tools:context=".CouponForm">
 
 
@@ -106,18 +106,34 @@
 
     <Button
         android:id="@+id/btnBookingForm"
-        android:layout_width="350dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/btnbg1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btnbg3"
         android:fontFamily="@font/fjord_one"
         android:text="Confirm"
-        android:textColor="@color/white_primary"
+        android:textColor="@color/black"
         android:textColorHighlight="#F5F0E1"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/backcouponform"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btnbg3"
+        android:fontFamily="@font/fjord_one"
+        android:text="BACK"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView4"
         app:layout_constraintVertical_bias="0.0" />
@@ -166,20 +182,19 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/romonolight"
         android:gravity="center_horizontal|center_vertical"
         android:text="COUPON"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white_primary"
         android:textColorHighlight="#1E3D59"
         android:textColorHint="#1E3D59"
         android:textSize="70dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintVertical_bias="0.04" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

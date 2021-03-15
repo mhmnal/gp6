@@ -59,9 +59,6 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-
-        ///////////////////LOGOUT///////////////////////////////////////
-
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,8 +70,6 @@ public class SecondActivity extends AppCompatActivity {
 
             }
         });
-
-        ////Direct buttons from SecondActivity to their own activities/////////////////////////////////////////////////
 
         clickProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +112,6 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this, BookingForm.class));
             }
         });
-        /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     }

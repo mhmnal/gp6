@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     android:focusableInTouchMode="false"
     tools:context=".RegistrationActivity">
 
@@ -21,37 +21,61 @@
         app:layout_constraintVertical_bias="0.73"
         app:cardBackgroundColor="@color/white_primary">
 
-        <EditText
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:background="@drawable/btnbg1"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white_primary"
+            android:hint="Name"
+            android:fontFamily="@font/fjord_one"
+            android:textColorHighlight="@color/white_primary"
+            android:textColorHint="@color/white_primary"
+            android:textColorLink="@color/white_primary" >
+
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_username"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30sp"
-            android:background="@drawable/btnbg1"
-            android:elevation="5dp"
-            android:fontFamily="@font/fjord_one"
-            android:hint="Name"
+            android:background="@null"
             android:padding="10sp"
             android:textColor="@color/white_primary"
             android:textColorHighlight="@color/white_primary"
             android:textColorHint="@color/white_primary"
             android:textColorLink="@color/white_primary" />
 
-        <EditText
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="95dp"
+            android:background="@drawable/btnbg1"
+            android:hint="Email"
+            android:textColor="@color/white_primary"
+            android:textColorHighlight="@color/white_primary"
+            android:textColorHint="@color/white_primary"
+            android:textColorLink="@color/white_primary" >
+
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/btnbg1"
-            android:elevation="5dp"
             android:fontFamily="@font/fjord_one"
-            android:hint="Email"
+            android:background="@null"
             android:padding="10sp"
             android:textColor="@color/white_primary"
             android:textColorHighlight="@color/white_primary"
             android:textColorHint="@color/white_primary"
             android:textColorLink="@color/white_primary" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -116,14 +140,14 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/camera" />
+        app:srcCompat="@drawable/photograph" />
 
     <TextView
         android:id="@+id/tvPictureClick"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginBottom="30dp"
-        android:fontFamily="@font/fjord_one"
+        android:fontFamily="@font/romonolight"
         android:gravity="center"
         android:shadowColor="#E6E6E6"
         android:text="Click above to change picture"
@@ -131,7 +155,7 @@
         android:textColorHighlight="#F5F0E1"
         android:textColorHint="#F5F0E1"
         android:textColorLink="#E6E6E6"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

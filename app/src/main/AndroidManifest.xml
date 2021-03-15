@@ -13,8 +13,14 @@
         android:roundIcon="@mipmap/park"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDemo">
-        <activity android:name=".WriteFeedback"></activity>
-        <activity android:name=".aboutus2" />
+        <activity android:name=".doneInterface2"></activity>
+        <activity android:name=".doneInterface" />
+        <activity
+            android:name=".WriteFeedback"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".aboutus2"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CouponForm"
             android:screenOrientation="portrait" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     tools:context=".ViewReceipt">
 
 
@@ -13,13 +13,14 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/btnbg3"
         android:fontFamily="@font/fjord_one"
         android:text="DASHBOARD"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView10"
         app:layout_constraintVertical_bias="0.0" />
@@ -29,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/romonolight"
         android:text="RECEIPT"
         android:textColor="@color/white_primary"
         android:textSize="40sp"

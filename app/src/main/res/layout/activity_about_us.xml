@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     tools:context=".AboutUs">
 
 
@@ -13,16 +13,17 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="left"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/romonolight"
         android:text="ABOUT US"
         android:textColor="@color/white_primary"
         android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.125" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="330dp"
@@ -42,9 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/fjord_one"
-            android:gravity="left"
-            android:text="Smart Parking is developed by a bunch of students who are passionate on creating and expanding our creativity. This app is a testament on how much we love  when it comes to developing a project as this is our first apps that we developed. We are founded under the tutelage of our university. They provided so much  resources for us to play and tinker around and in turn, we strives to be better at what we are doing. We are guided  by a very passionate lecturer of ours who are willing to sacrifice her sleep just to help us debug our coding at 3 a.m.. That is why we are hoping that you are enjoying our application as much as we do, as we have put our heart and souls into this project. Thank you very much for all the efforts that our team has put out and thank you to our customers for choosing our  application. "
-            android:textColor="@color/dark_blue"
+            android:gravity="center"
+            android:text="@string/aboutus"
+            android:textColor="@color/black"
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 
@@ -52,15 +53,15 @@
         android:id="@+id/aboutus2"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="MEMBERS"
         android:background="@drawable/btnbg3"
         android:fontFamily="@font/fjord_one"
+        android:text="MEMBERS"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.039" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

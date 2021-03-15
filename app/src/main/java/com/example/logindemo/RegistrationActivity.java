@@ -45,12 +45,10 @@ public class RegistrationActivity extends AppCompatActivity {
                     "(?=.*[0-9])" +         //at least 1 digit
                     "(?=.*[a-z])" +         //at least 1 lower case letter
                     "(?=.*[A-Z])" +         //at least 1 upper case letter
-                    //"(?=.*[a-zA-Z])" +      //any letter
                     "(?=\\S+$)" +           //no white spaces
                     ".{8,}" +               //at least 4 characters
                     "$");
 
-    //Variables////////////////////////////////////////////////////////////////////
     private EditText userName, userPassword, userEmail;
     private Button regButton;
     private TextView userLogin;
@@ -62,8 +60,6 @@ public class RegistrationActivity extends AppCompatActivity {
     Uri imagePath;
     private StorageReference storageReference;
 
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
@@ -79,69 +75,17 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
-    //To remove action and status bar///////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         setupUIViews();
-
-        //Integrate firebase shets////////////////////////////////////////////////
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseStorage = FirebaseStorage.getInstance();
-        storageReference = firebaseStorage.getReference();
-
-        /////////////////////////////////////////////////////////////////
-
-
-        userProfilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select image"), PICK_IMAGE);
-            }
-        });
-
-        ///////////////////////////////////////////////////////////////////
-
-        regButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (validate() &&  validatePassword()) {
-                    //Upload data to database
-                    String user_email = userEmail.getText().toString().trim();
-                    String user_password = userPassword.getText().toString().trim();
-
-                    firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            if (task.isSuccessful()) {
-                                sendEmailVerification();
-                            } else {
-                                Toast.makeText(RegistrationActivity.this, "Registration Fail", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-            }
-        });
-
-        ////////////////////////////////////////////////////////////////////////////////////////
-
-        userLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
-            }
-        });
+        firebasestuffs();
+        clickImage();
+        clickSignUp();
+        clickLogin();
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void setupUIViews() {
         userName = findViewById(R.id.et_username);
@@ -151,8 +95,6 @@ public class RegistrationActivity extends AppCompatActivity {
         userLogin = findViewById(R.id.txt_alrlogin);
         userProfilePic = findViewById(R.id.ivProfilePic);
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private Boolean validate() {
         Boolean result = false;
@@ -168,8 +110,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
         return result;
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void sendEmailVerification() {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
@@ -189,8 +129,6 @@ public class RegistrationActivity extends AppCompatActivity {
             });
         }
     }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void sendUserData() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -218,7 +156,6 @@ public class RegistrationActivity extends AppCompatActivity {
         UserProfile userProfile = new UserProfile(email, name);
         myRef.setValue(userProfile);
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private boolean validatePassword(){
             String passwordInput = userPassword.getEditableText().toString().trim();
@@ -232,5 +169,83 @@ public class RegistrationActivity extends AppCompatActivity {
             userPassword.setError(null);
             return true;
         }
+    }
+
+    private boolean validateUsername() {
+        String usernameInput = userName.getEditableText().toString().trim();
+        if (usernameInput.isEmpty()) {
+            userName.setError("Field can't be empty");
+            return false;
+        } else if (usernameInput.length() > 15) {
+            userName.setError("Username too long");
+            return false;
+        } else {
+            userName.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmail() {
+        String emailInput = userEmail.getEditableText().toString().trim();
+        if (emailInput.isEmpty()) {
+            userEmail.setError("Field can't be empty");
+            return false;
+        } else {
+            userEmail.setError(null);
+            return true;
+        }
+    }
+
+    private void clickLogin(){
+        userLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+            }
+        });
+    }
+
+    private void clickSignUp(){
+        regButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (validateUsername() && validateEmail() && validatePassword() && validate()) {
+                    //Upload data to database
+                    String user_email = userEmail.getText().toString().trim();
+                    String user_password = userPassword.getText().toString().trim();
+
+                    firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if (task.isSuccessful()) {
+                                sendEmailVerification();
+                            } else {
+                                Toast.makeText(RegistrationActivity.this, "Registration Fail", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    private void  clickImage(){
+        userProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select image"), PICK_IMAGE);
+            }
+        });
+    }
+
+    private void firebasestuffs(){
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
+        storageReference = firebaseStorage.getReference();
     }
 }

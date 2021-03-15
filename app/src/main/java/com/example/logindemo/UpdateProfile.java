@@ -40,7 +40,8 @@ public class UpdateProfile extends AppCompatActivity {
 
     private EditText newUserName, newUserAge;
     private TextView newUserEmail;
-    private Button save;
+    private Button save,back;
+    private String name, profilepic;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
@@ -71,7 +72,8 @@ public class UpdateProfile extends AppCompatActivity {
         newUserName = findViewById(R.id.etNameUpdate);
         newUserEmail = findViewById(R.id.etEmailUpdate);
         save = findViewById(R.id.btnSave);
-        updateProfilePic = (ImageView) findViewById(R.id.ivPictureUpdate);
+        updateProfilePic = findViewById(R.id.ivPictureUpdate);
+        back = findViewById(R.id.backupdateprofile);
 
         //Status bar and Action bar shenanigans////////////////////////////////////////////////////////////////////////////////////////
 
@@ -137,8 +139,10 @@ public class UpdateProfile extends AppCompatActivity {
         });
 
         save.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                if(validate()){
                 String name = newUserName.getText().toString();
                 String email = newUserEmail.getText().toString();
 
@@ -162,11 +166,19 @@ public class UpdateProfile extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                         Toast.makeText(UpdateProfile.this, "Upload Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateProfile.this, UpdateProfile.class));
+                        startActivity(new Intent(UpdateProfile.this, doneInterface.class));
                     }
                 });
+            } }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UpdateProfile.this, SecondActivity.class));
             }
         });
+
 
     }
 
@@ -179,5 +191,17 @@ public class UpdateProfile extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    ;
+    private Boolean validate() {
+        Boolean result = false;
+        name = newUserName.getText().toString();
+        if (name.isEmpty()) {
+            Toast.makeText(this, "Enter all details", Toast.LENGTH_SHORT).show();
+        } else {
+            result = true;
+        }
+
+        return result;
+    }
+
+
 }

@@ -36,7 +36,7 @@ public class CouponForm extends AppCompatActivity implements
         /*DatePickerDialog.OnDateSetListener , TimePickerDialog.OnTimeSetListener*/ AdapterView.OnItemSelectedListener {
     public String name, clickedJamList;
     TextView currentDateString, showTime;
-    Button cForm;
+    Button cForm,back;
     Spinner spinnerHour;
     private DatabaseReference reference;
     private FirebaseAuth firebaseAuth;
@@ -61,6 +61,7 @@ public class CouponForm extends AppCompatActivity implements
         showTime.setText(cTime);
         cForm = findViewById(R.id.btnBookingForm);
         spinnerHour = findViewById(R.id.bu2);
+        back = findViewById(R.id.backcouponform);
 
         firebaseAuth = FirebaseAuth.getInstance();
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("UserInfo").child(firebaseAuth.getUid());
@@ -79,23 +80,24 @@ public class CouponForm extends AppCompatActivity implements
         });
 
 
+
+
         initList();
         spinAdapter mAdapter = new spinAdapter(this, mJamList);
         spinnerHour.setAdapter(mAdapter);
-
         spinnerHour.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spinItem clickedItem = (spinItem) parent.getItemAtPosition(position);
                 clickedJamList = clickedItem.getJam();
-
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
+
+
 
         cForm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,9 +110,17 @@ public class CouponForm extends AppCompatActivity implements
                 couponInfo.setHourss(clickedJamList);
                 reference.setValue(couponInfo);
                 Toast.makeText(CouponForm.this, "Coupon Booked", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(CouponForm.this, doneInterface2.class));
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent(CouponForm.this, SecondActivity.class));
             }
         });
+
     }
 
 ///////////////////////////////SPINNER STUFFS///////////////////////////////////////////

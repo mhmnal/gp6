@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard1"
+    android:background="@drawable/dashboard11"
     tools:context=".UpdateProfile">
 
 
@@ -12,10 +12,11 @@
         android:id="@+id/tvProfileH1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/carnivales"
+        android:fontFamily="@font/romonolight"
         android:text="UPDATE"
         android:textColor="#F5F0E1"
         android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +43,10 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20sp"
-            android:fontFamily="@font/carnivales"
+            android:fontFamily="@font/romonolight"
             android:text="Name"
             android:textColor="@color/dark_blue"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
         <EditText
             android:id="@+id/etNameUpdate"
@@ -67,10 +68,10 @@
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="145sp"
-            android:fontFamily="@font/carnivales"
+            android:fontFamily="@font/romonolight"
             android:text="Email"
             android:textColor="@color/dark_blue"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/etEmailUpdate"
@@ -92,9 +93,21 @@
             android:background="@drawable/btnbg3"
             android:fontFamily="@font/fjord_one"
             android:text="Update"
-            android:textColor="@color/dark_blue"
+            android:textColor="@color/black"
             android:textStyle="bold"
            />
+
+        <Button
+            android:id="@+id/backupdateprofile"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="340dp"
+            android:background="@drawable/btnbg3"
+            android:fontFamily="@font/fjord_one"
+            android:text="BACK"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
 
     </androidx.cardview.widget.CardView>
@@ -109,5 +122,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.161"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/photograph" />
 </androidx.constraintlayout.widget.ConstraintLayout>

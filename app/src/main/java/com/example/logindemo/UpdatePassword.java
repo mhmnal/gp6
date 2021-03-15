@@ -3,6 +3,7 @@ package com.example.logindemo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +31,7 @@ public class UpdatePassword extends AppCompatActivity {
                     ".{8,}" +               //at least 4 characters
                     "$");
 
-    private Button update;
+    private Button update,back;
     private EditText newPassword;
     private FirebaseUser firebaseUser;
     private FirebaseAuth firebaseAuth;
@@ -42,6 +43,7 @@ public class UpdatePassword extends AppCompatActivity {
 
         update = findViewById(R.id.btnUpdatePassword);
         newPassword = findViewById(R.id.etNewPassword);
+        back = findViewById(R.id.backupdatepassword);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -68,6 +70,14 @@ public class UpdatePassword extends AppCompatActivity {
                 });
             }}
         });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UpdatePassword.this, SecondActivity.class));
+            }
+        });
+
 
     }
 
