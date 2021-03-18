@@ -123,8 +123,6 @@ public class CouponForm extends AppCompatActivity implements
 
     }
 
-///////////////////////////////SPINNER STUFFS///////////////////////////////////////////
-
     private void initList() {
         mJamList = new ArrayList<>();
         mJamList.add(new spinItem("1"));

@@ -59,8 +59,6 @@
             android:fontFamily="@font/fjord_one"
             android:text="Click Above"
             android:textColor="@color/white_primary" />
-
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

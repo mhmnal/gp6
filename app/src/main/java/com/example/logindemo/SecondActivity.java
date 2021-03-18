@@ -3,22 +3,17 @@ package com.example.logindemo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
-
 import android.os.Bundle;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import soup.neumorphism.NeumorphCardView;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -91,30 +86,23 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(SecondActivity.this, AboutUs.class));
             }
         });
-
         contactus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, ContactUs.class));
             }
         });
-
         viewRec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, ViewReceipt.class));
             }
         });
-
         cardetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SecondActivity.this, BookingForm.class));
             }
         });
-
-
     }
-
-
 }

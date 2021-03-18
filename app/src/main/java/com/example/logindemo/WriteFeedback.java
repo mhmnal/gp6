@@ -40,7 +40,6 @@ public class WriteFeedback extends AppCompatActivity {
                 sendMail();
             }
         });
-
         copy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +50,6 @@ public class WriteFeedback extends AppCompatActivity {
                 Toast.makeText(WriteFeedback.this, "Copied", Toast.LENGTH_SHORT).show();
             }
         });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +58,6 @@ public class WriteFeedback extends AppCompatActivity {
         });
 
     }
-
     private void sendMail(){
         String message = emailtop.getText().toString();
 
@@ -69,6 +66,5 @@ public class WriteFeedback extends AppCompatActivity {
 
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent,"Choose an email client"));
-
     }
 }

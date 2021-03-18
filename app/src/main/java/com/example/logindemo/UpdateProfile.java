@@ -2,14 +2,11 @@ package com.example.logindemo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,7 +18,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,15 +29,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.io.IOException;
 
 public class UpdateProfile extends AppCompatActivity {
 
-    private EditText newUserName, newUserAge;
+    private EditText newUserName;
     private TextView newUserEmail;
     private Button save,back;
-    private String name, profilepic;
+    private String name;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseStorage firebaseStorage;
@@ -74,11 +69,6 @@ public class UpdateProfile extends AppCompatActivity {
         save = findViewById(R.id.btnSave);
         updateProfilePic = findViewById(R.id.ivPictureUpdate);
         back = findViewById(R.id.backupdateprofile);
-
-        //Status bar and Action bar shenanigans////////////////////////////////////////////////////////////////////////////////////////
-
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -122,7 +112,6 @@ public class UpdateProfile extends AppCompatActivity {
             }
         });
 
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -130,11 +119,9 @@ public class UpdateProfile extends AppCompatActivity {
                 newUserName.setText(userProfile.getUserName());
                 newUserEmail.setText(userProfile.getUserEmail());
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(UpdateProfile.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
-
             }
         });
 

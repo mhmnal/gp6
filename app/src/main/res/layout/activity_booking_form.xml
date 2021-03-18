@@ -161,7 +161,6 @@
             android:textColor="@color/white_primary"
             android:textColorHint="@color/white_primary70op" />
 
-
         <Button
             android:id="@+id/btnBConfirm"
             android:layout_width="200dp"
@@ -186,9 +185,5 @@
         android:textColor="@color/white_primary"
         android:textSize="20sp"/>
 
-
-
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

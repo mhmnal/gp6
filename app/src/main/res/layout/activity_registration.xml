@@ -21,7 +21,6 @@
         app:layout_constraintVertical_bias="0.73"
         app:cardBackgroundColor="@color/white_primary">
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +33,6 @@
             android:textColorHighlight="@color/white_primary"
             android:textColorHint="@color/white_primary"
             android:textColorLink="@color/white_primary" >
-
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_username"
@@ -128,7 +126,6 @@
             android:textColor="@color/dark_blue"
             android:textSize="14sp" />
 
-
     </androidx.cardview.widget.CardView>
 
     <ImageView
@@ -161,5 +158,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivProfilePic"
         app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

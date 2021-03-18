@@ -8,7 +8,6 @@
     tools:context=".SecondActivity"
     android:background="@drawable/design22">
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/btnMyProfile"
         android:layout_width="130dp"
@@ -23,18 +22,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:cardBackgroundColor="@color/red2">
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
             <ImageView
                 android:id="@+id/ig4"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
                 android:padding="10dp"
                 android:src="@drawable/profile" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
@@ -46,8 +42,6 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-
         </RelativeLayout>
 
 
@@ -157,10 +151,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -201,10 +192,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -246,10 +234,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -290,11 +275,6 @@
                 android:textStyle="bold"
                 android:paddingHorizontal="5dp"/>
 
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
